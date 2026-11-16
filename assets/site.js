@@ -182,14 +182,13 @@
   };
   document.addEventListener('input', e => { if (e.target.matches && e.target.matches('input[data-zip-out]')) zipCheck(e.target); });
 
-  /* ---- 5) 申込み：1問ずつ。答えるたびにナンバーの数字がそろい、ネジが締まる ---- */
+  /* ---- 5) 申込み：1問ずつ。上の細い線で、いまどこまで進んだかを見せる ---- */
   const slot = $('#wz-slot'), dlg = $('#dlg'), dlgBody = $('#dlg-body');
   const pageKind = document.body.dataset.kind || '';
   let openWizard = null;
   function setupWizard(wz) {
     const steps = $$('.wz-step', wz);
-    const plate = $('#wz-plate', wz), top = $('#wz-top', wz), count = $('#wz-count', wz);
-    const digits = $$('.wz-num b', wz), bolts = $$('.bolt', plate);
+    const count = $('#wz-count', wz), bar = $('#wz-bar', wz);
     const back = $('.wz-back', wz), next = $('.wz-next', wz), err = $('.wz-error', wz);
     let at = 0;
 
@@ -197,8 +196,7 @@
     function show(i, focus) {
       at = Math.max(0, Math.min(steps.length - 1, i));
       steps.forEach((s, k) => { s.hidden = k !== at; });
-      digits.forEach((d, k) => d.classList.toggle('on', k < at));
-      bolts.forEach((b, k) => b.classList.toggle('on', k < at));
+      if (bar) bar.style.width = `${(at + 1) / steps.length * 100}%`;
       const last = at === steps.length - 1;
       count.textContent = last ? 'さいごです。' : `${at + 1} / ${steps.length}　分かるところだけで大丈夫です`;
       back.hidden = at === 0;
@@ -215,18 +213,8 @@
     back.addEventListener('click', () => show(at - 1, true));
     next.addEventListener('click', () => show(at + 1, true));
 
-    function tone(t) {
-      plate.classList.remove('pl-white', 'pl-yellow', 'pl-green', 'pl-black', 'pl-gray', 'flip');
-      plate.classList.add(`pl-${t}`);
-      void plate.offsetWidth;
-      if (motion) plate.classList.add('flip');
-    }
-    function reflect(input) {
-      if (input.name === 'kind') tone(input.closest('label').dataset.tone);
-      if (input.name === 'maker') top.textContent = input.value === 'わからない' || input.value === 'そのほか' ? 'ノリカエ' : input.value;
-      next.textContent = '次へ';
-    }
-    wz.addEventListener('change', e => { if (e.target.type === 'radio') reflect(e.target); });
+    const reflect = () => { next.textContent = '次へ'; };
+    wz.addEventListener('change', e => { if (e.target.type === 'radio') reflect(); });
     // マウスと指で選んだときだけ、次の質問へ進む（キーボードは「次へ」で進む）
     wz.addEventListener('click', e => {
       if (!e.target.matches('.ch input[type=radio]') || e.detail === 0) return;
@@ -236,22 +224,23 @@
 
     function setRadio(name, value) {
       const r = value && wz.querySelector(`input[name="${name}"][value="${value}"]`);
-      if (r) { r.checked = true; reflect(r); }
+      if (r) { r.checked = true; reflect(); }
+    }
+    // 分かっている答えを入れて、まだ答えていない最初の問いを出す（開かずに、ページの中でも使う）
+    function fill(pre) {
+      if (!pre) return;
+      if (pre.souba) {   // 相場から開くときは、前の答えを消してから入れる（前の車の答えが残らないように）
+        $$('.wz-step:not(.wz-contact) input[type=radio]', wz).forEach(r => { r.checked = false; });
+      }
+      Object.keys(pre).forEach(k => {
+        if (['model', 'souba'].includes(k)) wz.elements[k].value = pre[k]; else setRadio(k, pre[k]);
+      });
+      const first = steps.findIndex(s => s.dataset.key !== 'contact' && !answered(s));
+      show(first < 0 ? steps.length - 1 : first, false);
     }
     function open(pre, place) {
-      if (pre && pre.souba) {   // 相場から開くときは、前の答えを消してから入れる（前の車の答えが残らないように）
-        $$('.wz-step:not(.wz-contact) input[type=radio]', wz).forEach(r => { r.checked = false; });
-        top.textContent = 'ノリカエ';
-        tone('white');
-      }
-      if (pre) {
-        Object.keys(pre).forEach(k => {
-          if (['model', 'souba'].includes(k)) wz.elements[k].value = pre[k]; else setRadio(k, pre[k]);
-        });
-        const first = steps.findIndex(s => s.dataset.key !== 'contact' && !answered(s));
-        show(first < 0 ? steps.length - 1 : first, false);
-      }
-      track('form_link_click', { place: place || 'link' });
+      fill(pre);
+      track('form_link_click', { place: place || 'link', kind: (pre && pre.kind) || '' });
       if (typeof dlg.showModal !== 'function') { const a = $('#apply'); if (a) a.scrollIntoView(); return; }
       if (slot) slot.style.minHeight = `${slot.offsetHeight}px`;
       dlgBody.append(wz);
@@ -312,7 +301,7 @@
       }
       // 送れたあとで数える（送れなかった人は数えない）
       track('form_submit', { kind: (wz.querySelector('[name="kind"]:checked') || {}).value || '', from_souba: !!wz.elements.souba.value });
-      digits.forEach(d => d.classList.add('on'));
+      if (bar) bar.style.width = '100%';
       const done = document.createElement('div');
       done.className = 'wz-done';
       done.setAttribute('role', 'status');
@@ -331,7 +320,7 @@
       const h = $('h3', done); h.tabIndex = -1; h.focus();
     });
     wz.addEventListener('input', () => { if (!err.hidden) { const { msgs } = check(); if (!msgs.length) err.hidden = true; } });
-    return open;
+    return { open, fill };
   }
   if (dlg) {
     $('.dlg-close').addEventListener('click', () => dlg.close());
@@ -341,15 +330,20 @@
     const a = e.target.closest('[data-apply]');
     if (!a || !openWizard) return;   // 読み込めていないときは、ふつうのリンクとしてトップの申込みへ
     e.preventDefault();
-    openWizard(pageKind ? { kind: pageKind } : null, a.dataset.place || a.className);
+    // 最初の画面の「どんな車ですか？」で選んだ車（data-kind）か、ページの車の種類を選んだ状態で開く
+    const kind = a.dataset.kind || pageKind;
+    openWizard(kind ? { kind } : null, a.dataset.place || a.className);
   });
-  if ($('#wizard')) openWizard = setupWizard($('#wizard'));
+  if ($('#wizard')) openWizard = setupWizard($('#wizard')).open;
   else if (dlg) fetch('index.html').then(r => r.text()).then(t => {
     const f = new DOMParser().parseFromString(t, 'text/html').querySelector('#wizard');
     if (!f) return;
     const n = document.importNode(f, true);
-    dlgBody.append(n);
-    openWizard = setupWizard(n);
+    const wiz = setupWizard(n);
+    openWizard = wiz.open;
+    // 個別ページは、ページの最後の申込みの欄に、そのページの車の種類を選んだ状態で置く
+    if (slot) { slot.replaceChildren(n); wiz.fill(pageKind ? { kind: pageKind } : null); }
+    else dlgBody.append(n);
   }).catch(() => {});
 
   const odoHTML = '<span class="dcol"><span>' + [...'0123456789'].map(d => `<i>${d}</i>`).join('') + '</span></span>';
@@ -572,7 +566,4 @@
   /* 一括査定の電話は、見えたときに少しだけ鳴る */
   const diff = $('.diff');
   if (diff) new IntersectionObserver(es => { if (es[0].isIntersecting) diff.classList.add('on'); }, { threshold: 0.3 }).observe(diff);
-
-  /* 個別ページ：車が走って入ってくる（page.css が形を決める） */
-  $$('.phero .wcar').forEach(c => { c.classList.add('spin'); setTimeout(() => c.classList.remove('spin'), 1200); });
 })();

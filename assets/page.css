@@ -11,7 +11,7 @@ main .sub{max-width:46em}
 .bar-nav a[aria-current="page"]{color:var(--green);border-bottom-color:var(--green)}
 .bar-panel a[aria-current="page"]{background:var(--mint);color:var(--green)}
 
-/* ---- 最初の章（白い地。右に車の絵） ---- */
+/* ---- 最初の章（白い地。右に写真） ---- */
 .phero{position:relative;padding-top:calc(var(--bar) + clamp(20px,4.4vh,52px));padding-bottom:clamp(32px,5vh,60px);background:#fff;overflow:hidden}
 .ph-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(28px,4.4vw,72px);align-items:center}
 .ph-copy{min-width:0}
@@ -29,19 +29,10 @@ main .sub{max-width:46em}
 .ph-links a,.others a{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:700;font-size:16px;color:var(--green);text-underline-offset:5px}
 .ph-links a::after,.others a::after{content:"";flex:none;width:8px;height:8px;border-top:2.5px solid currentColor;border-right:2.5px solid currentColor;transform:rotate(45deg)}
 
-/* 車の絵：うすい緑の板と、細い道の線。車は1回だけ走って入ってくる（タイヤは site.js が回す） */
-.ph-art{position:relative;min-width:0;aspect-ratio:5/4;border-radius:28px;background:var(--mint);overflow:hidden;isolation:isolate}
-.ph-art::before{content:"";position:absolute;left:0;right:0;bottom:0;height:21%;background:var(--mint-2)}
-.ph-art::after{content:"";position:absolute;left:0;right:0;bottom:10%;height:4px;margin-bottom:-2px;background:repeating-linear-gradient(90deg,#fff 0 44px,transparent 44px 84px)}
-.ph-dots{position:absolute;left:7%;top:9%;width:112px;height:80px;background:radial-gradient(circle,var(--yellow) 0 2.5px,transparent 3px) 0 0/16px 16px;opacity:.8}
-.ph-plate{position:absolute;z-index:1;right:7%;top:9%;width:clamp(150px,15vw,214px)}
-.ph-plate b{display:flex;align-items:center;gap:6px;font-size:clamp(28px,2.9vw,40px)}
-.ph-plate .kana{font-size:.55em}
-.ph-car{position:absolute;z-index:2;left:50%;bottom:7%;width:84%;translate:-50% 0}
-.ph-car-truck{width:72%}
-.ph-car-sedan{width:86%}
-@keyframes ph-drive{from{transform:translateX(-58%)}to{transform:none}}
-.motion .phero .wcar{animation:ph-drive 1.2s cubic-bezier(.2,.8,.25,1)}
+/* 写真：トップの最初の画面と同じ見せ方（角丸・やわらかい影）。今は素材写真なので「写真はイメージです」 */
+.ph-photo{min-width:0;margin:0}
+.ph-photo img{display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow);background:var(--mint-2)}
+.ph-photo figcaption{margin-top:6px;font-size:13px;color:var(--ink-2);text-align:right}
 
 /* ---- ページの中の目次 ---- */
 .pnav{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -161,6 +152,18 @@ main .sub{max-width:46em}
 .ticks li{position:relative;padding-left:30px;font-size:16.5px;line-height:1.7}
 .ticks li::before{content:"";position:absolute;left:0;top:.28em;width:20px;height:20px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.4l3 3 6-6.6' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
 
+/* ---- 約束：ページの後ろの短い帯（くわしい条件はトップの約束の章） ---- */
+.pr-band{background:var(--mint);padding-block:clamp(28px,4vw,48px)}
+.pr-band-in{display:grid;gap:16px}
+.pr-band-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 24px}
+.pr-band h2{font-size:clamp(22px,2.2vw,28px)}
+.pr-band-head p{font-size:15.5px;color:var(--ink-2)}
+.pr-band-head a{margin-left:6px;font-weight:700;color:var(--green);text-underline-offset:4px}
+.pr-chips{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.pr-chips li{display:grid;gap:2px;align-content:start;background:#fff;border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);min-width:0}
+.pr-chips b{font:800 clamp(17px,1.4vw,19px)/1.4 var(--f-round);color:var(--green)}
+.pr-chips span{font-size:14px;line-height:1.5;color:var(--ink-2)}
+
 /* ---- 質問（ページの下のほう） ---- */
 .faq-list details p a{color:var(--green);font-weight:700}
 
@@ -178,8 +181,12 @@ main .sub{max-width:46em}
 .shops b{display:block}
 .shops span{color:var(--ink-2)}
 .final-shop .note{margin-top:0}
-.final-acts{grid-area:acts;position:sticky;top:calc(var(--bar) + 24px);display:grid;gap:16px;background:#fff;border-radius:24px;padding:clamp(20px,2.6vw,32px);box-shadow:var(--shadow);border-top:6px solid var(--orange);min-width:0}
+/* 右：申込みの欄（トップから読み込む。ページの車の種類を選んだ状態）と、電話 */
+.final-acts{grid-area:acts;display:grid;gap:18px;min-width:0}
+.final-wait{display:grid;gap:16px;background:#fff;border-radius:24px;padding:clamp(20px,2.6vw,32px);box-shadow:var(--shadow);border-top:6px solid var(--orange)}
 .final-acts .btn{width:100%}
+.final-tel{display:grid;gap:6px;justify-items:center}
+.final-tel>p:first-child{font-weight:700}
 .final-acts-t{font:800 clamp(19px,1.6vw,22px)/1.45 var(--f-round)}
 .others{display:flex;flex-wrap:wrap;align-items:center;gap:0 22px;margin-top:2px}
 .others p{width:100%;font-weight:700;font-size:15px;color:var(--ink-2)}
@@ -192,15 +199,26 @@ main .sub{max-width:46em}
 /* ==== 画面の幅ごと ==== */
 @media (max-width:1100px){
   .cards-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pr-chips{grid-template-columns:repeat(3,minmax(0,1fr))}
   .steps5 li{padding:16px 14px}
 }
 @media (max-width:899px){
-  .ph-grid{grid-template-columns:minmax(0,1fr);gap:22px}
-  .ph-art{width:100%;max-width:600px;aspect-ratio:16/9;justify-self:center}
+  /* スマホ・縦の画面：見出し → 写真 → 申込みと電話 → 説明 → 安心の印（トップと同じ順） */
+  .ph-grid{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .ph-copy{display:contents}
+  .ph-copy>.crumbs{order:1}
+  .ph-copy>.ph-tag{order:2}
+  .ph-copy>h1{order:3}
+  .ph-photo{order:4;width:100%;max-width:640px;margin-top:16px}
+  .ph-photo img{aspect-ratio:3/2}
+  .ph-copy>.ph-acts{order:5}
+  .ph-copy>.ph-note{order:6}
+  .ph-copy>.ph-lead{order:7}
+  .ph-copy>.trust{order:8}
+  .ph-copy>.ph-links{order:9}
   .insp,.loan,.calc,.biz,.final-grid{grid-template-columns:minmax(0,1fr)}
   .insp{grid-template-areas:"art" "panel" "list"}
   .final-grid{grid-template-areas:"copy" "acts" "more"}
-  .final-acts{position:static}
   .calc-out{border-left:0;border-top:1px solid var(--line)}
   /* 流れは、縦に並べる（番号の右に見出し） */
   .steps5{grid-template-columns:minmax(0,1fr);gap:10px}
@@ -212,16 +230,6 @@ main .sub{max-width:46em}
 }
 @media (max-width:720px){
   .phero{padding-top:calc(var(--bar) + 14px);padding-bottom:28px}
-  /* スマホ：見出し → 説明 → 申込みボタン → 安心の印 の順に */
-  .ph-copy{display:flex;flex-direction:column}
-  .ph-copy>.crumbs{order:1}
-  .ph-copy>.ph-tag{order:2}
-  .ph-copy>h1{order:3}
-  .ph-copy>.ph-lead{order:4}
-  .ph-copy>.ph-acts{order:5}
-  .ph-copy>.ph-note{order:6}
-  .ph-copy>.trust{order:7}
-  .ph-copy>.ph-links{order:8}
   .crumbs{font-size:14px;margin-bottom:10px}
   .ph-tag{font-size:14px}
   .ph-tag span{padding:3px 11px}
@@ -230,15 +238,14 @@ main .sub{max-width:46em}
   .phero .trust{margin-top:12px}
   .ph-acts{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:18px}
   .ph-note{font-size:15px;padding:9px 14px}
-  .ph-art{border-radius:20px}
-  .ph-dots{display:none}
-  .ph-plate{width:108px;top:9%;right:5%}
-  .ph-plate small{font-size:9px}
-  .ph-plate b{font-size:21px;gap:3px}
-  .ph-plate .bolt{display:none}
-  .ph-car{width:66%;bottom:6%}
-  .ph-car-truck{width:58%}
-  .ph-car-sedan{width:70%}
+  .ph-photo figcaption{font-size:12px;margin-top:4px}
+  .ph-acts{margin-top:14px}
+  .ph-lead{margin-top:16px}
+  .pr-band-in{gap:12px}
+  .pr-chips{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .pr-chips li{padding:10px 12px}
+  .pr-chips b{font-size:16.5px}
+  .pr-chips span{font-size:13.5px}
   .pnav-in{display:block;padding-block:8px 10px}
   .pnav-t{font-size:14px;margin-bottom:6px}
   /* スマホでは目次を横に流す（ページは横にはみ出さない） */
@@ -292,16 +299,13 @@ main .sub{max-width:46em}
   .biz{margin-top:20px}
   .ticks li{font-size:16px}
   .final-copy>p{font-size:16px}
-  .final-acts{padding:18px 16px;gap:14px}
+  .final-wait{padding:18px 16px;gap:14px}
 }
 @media (max-width:380px){
-  .ph-plate{width:94px}
-  .ph-plate b{font-size:18px}
-  .ph-plate small{font-size:8px}
   .insp-list{grid-template-columns:minmax(0,1fr)}
   .insp-list button{min-height:46px}
 }
 @media (prefers-reduced-motion:reduce){
-  .phero .wcar,.spot,.insp-panel>*{animation:none!important}
+  .spot,.insp-panel>*{animation:none!important}
   .spot,.insp-list button{transition:none}
 }
