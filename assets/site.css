@@ -165,13 +165,14 @@ a:hover{text-decoration-thickness:2px}
 .hero-souba{justify-self:start;display:inline-flex;align-items:center;gap:10px;margin-top:16px;min-height:44px;font-weight:700;font-size:16px;color:var(--green);text-underline-offset:5px}
 .hero-souba::after{content:"";width:8px;height:8px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:translateY(-3px) rotate(45deg)}
 
-.show{position:relative;min-width:0;isolation:isolate}
+.show{position:relative;min-width:0;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px}
+.show-view{grid-column:1/-1}
 .show-view{position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--mint-2);box-shadow:var(--shadow);isolation:isolate}
 .slide{position:absolute;inset:0;opacity:0;visibility:hidden}
 .slide.is-on{opacity:1;visibility:visible;z-index:2}
 .slide.is-off{opacity:1;visibility:visible;z-index:1}
 .slide picture,.slide img{display:block;width:100%;height:100%}
-.slide img{object-fit:cover;transform-origin:62% 58%}
+.slide img{object-fit:cover;object-position:50% 75%;transform-origin:50% 70%}
 .motion .slide{transition:opacity .9s ease,visibility 0s .9s}
 .motion .slide.is-on{transition:opacity .9s ease,visibility 0s}
 .motion .slide.is-off{transition:none}
@@ -179,13 +180,15 @@ a:hover{text-decoration-thickness:2px}
 .motion .show.paused .slide img{animation-play-state:paused}
 @keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
 .slide figcaption{position:absolute;left:14px;top:14px;z-index:3;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.95);color:var(--green);font-weight:700;font-size:clamp(14.5px,1.2vw,17px);line-height:1.4;box-shadow:0 2px 10px rgba(0,0,0,.12)}
-.show-ui{position:absolute;left:12px;bottom:10px;z-index:4;display:flex;align-items:center;gap:6px}
-.show-dots{display:flex;gap:2px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.92)}
+/* 点と「止める」は、写真の下の左。右に「写真はイメージです」 */
+.show-ui{grid-column:1;display:flex;align-items:center;gap:6px;margin-top:8px;min-width:0}
+.show-dots{display:flex;gap:0}
 .show-dots button{width:26px;height:40px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
 .show-dots button::before{content:"";width:9px;height:9px;border-radius:50%;background:#8C9A92;transition:width .3s,background-color .3s,border-radius .3s}
 .show-dots button[aria-current="true"]::before{width:20px;border-radius:5px;background:var(--green)}
-.show-pause{order:2;min-height:40px;padding:0 14px;border:0;border-radius:999px;background:rgba(255,255,255,.92);color:var(--ink);font:700 14px/1 var(--f-body);cursor:pointer}
-.show-note{margin-top:6px;font-size:13px;color:var(--ink-2);text-align:right}
+.show-pause{order:2;min-height:40px;padding:0 14px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:700 14px/1 var(--f-body);cursor:pointer}
+.show-pause:hover{border-color:var(--green);color:var(--green)}
+.show-note{grid-column:2;margin-top:8px;font-size:13px;color:var(--ink-2);text-align:right}
 
 @media (min-width:900px){
   .hero{min-height:min(100svh,860px);display:grid;align-items:center}
@@ -488,7 +491,7 @@ html:not(.js) .wz-nav{display:none}
   .show-view{aspect-ratio:3/2}
   .show-note{font-size:12px;margin-top:4px}
   .slide figcaption{left:10px;top:10px;font-size:14px;padding:5px 12px}
-  .show-ui{left:8px;bottom:6px}
+  .show-ui{margin-top:4px}
   .show-dots button{width:22px;height:36px}
   .show-pause{min-height:36px;padding:0 12px;font-size:13px}
   .sec h2{font-size:clamp(24px,7vw,28px)}

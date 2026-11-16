@@ -101,7 +101,7 @@
       ui.append(pauseBtn);
     }
     ui.append(dots);
-    $('.show-view', show).append(ui);
+    $('.show-view', show).after(ui);   // 点と「止める」は写真の下に（写真の上に重ねると、車の足元が隠れるため）
 
     let at = 0, timer = 0, loops = 0, userPaused = !motion, finished = false, inside = false, seen = true;
     const btns = $$('button', dots);
