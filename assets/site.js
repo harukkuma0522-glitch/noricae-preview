@@ -181,6 +181,21 @@
     else { out.textContent = '神奈川県の外のようです。伺えるかどうか、お電話でご相談ください。'; out.classList.add('warn'); }
   };
   document.addEventListener('input', e => { if (e.target.matches && e.target.matches('input[data-zip-out]')) zipCheck(e.target); });
+  // 「確かめる」ボタン（打ち終わってから押す人のため。結果は打っている間にも出る）
+  const zipForm = $('#zip');
+  if (zipForm) zipForm.addEventListener('submit', e => { e.preventDefault(); const i = $('input[data-zip-out]', zipForm); zipCheck(i); i.focus(); });
+
+  /* 会社の表：携帯では最初の5行だけ見せて、「すべて見る」で開く（ページが長くなりすぎないように） */
+  const co = $('.co');
+  if (co && matchMedia('(max-width: 720px)').matches && co.children.length > 6) {
+    co.classList.add('co-fold');
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'co-all';
+    b.textContent = `会社の情報をすべて見る（ほか${co.children.length - 5}つ）`;
+    b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', () => { co.classList.remove('co-fold'); b.remove(); });
+    co.after(b);
+  }
 
   /* ---- 5) 申込み：1問ずつ。上の細い線で、いまどこまで進んだかを見せる ---- */
   const slot = $('#wz-slot'), dlg = $('#dlg'), dlgBody = $('#dlg-body');
@@ -555,15 +570,4 @@
     r.style.transform = 'translateY(0)';
   });
 
-  /* 買い取る車：走って入ってきて止まる。タイヤが回る */
-  onSight($$('.bay .wcar'), c => { c.classList.add('ready', 'spin'); }, c => {
-    void c.offsetWidth;
-    c.classList.add('go');
-    c.classList.remove('ready');
-    setTimeout(() => c.classList.remove('spin', 'go'), 1250);
-  });
-
-  /* 一括査定の電話は、見えたときに少しだけ鳴る */
-  const diff = $('.diff');
-  if (diff) new IntersectionObserver(es => { if (es[0].isIntersecting) diff.classList.add('on'); }, { threshold: 0.3 }).observe(diff);
 })();
