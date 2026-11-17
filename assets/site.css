@@ -142,15 +142,9 @@ a:hover{text-decoration-thickness:2px}
 .hero-acts{margin-top:20px;display:grid;gap:12px}
 .say{font-weight:700;font-size:clamp(17px,1.45vw,20px);line-height:1.5}
 .hero .btn{padding-inline:20px;white-space:nowrap}
-/* 無料査定の入口：車の種類を選ぶと、申込みの続き（メーカー）から開く */
-.quick{display:grid;gap:10px;max-width:600px;background:#fff;border-radius:18px;padding:14px 16px 12px;box-shadow:var(--shadow);border-top:5px solid var(--orange)}
-.quick-t{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;font:800 clamp(19px,1.5vw,21px)/1.4 var(--f-round)}
-.quick-t b{font:700 14px/1.6 var(--f-body);padding:1px 10px;border-radius:6px;background:var(--cream);color:var(--ink);border:1.5px solid var(--orange)}
-.quick-ch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.quick-b{display:flex;align-items:center;justify-content:center;min-height:62px;padding:6px 8px;border-radius:12px;background:var(--orange);color:var(--ink);box-shadow:0 4px 0 var(--orange-d);font-weight:700;font-size:15.5px;line-height:1.35;text-align:center;text-decoration:none;word-break:keep-all;transition:transform .1s,box-shadow .1s,background-color .15s}
-.quick-b:hover{background:var(--orange-h)}
-.quick-b:active{transform:translateY(3px);box-shadow:0 1px 0 var(--orange-d)}
-.quick-note{font-size:14px;line-height:1.5;color:var(--ink-2)}
+/* 最初の画面の申込み：ボタン1つ（車を選ぶのは、すぐ下の相場の章だけ。2回聞かない） */
+.hero-go{display:grid;gap:6px;justify-items:center;max-width:600px}
+.hero-go .btn{width:100%}
 .hero-tel{display:grid;gap:6px;justify-items:center;max-width:600px}
 .hero-tel .btn{width:100%}
 @media (min-width:900px){
@@ -210,8 +204,6 @@ a:hover{text-decoration-thickness:2px}
   .trust{margin-top:12px}
   .hero-acts{margin-top:14px;gap:8px}
   .hero-souba{margin-top:6px}
-  .quick{gap:8px;padding-block:12px 10px}
-  .quick-b{min-height:56px}
 }
 
 /* ---- 相場 ---- */
@@ -236,6 +228,8 @@ input::placeholder{color:#66736C}
 .odo-c{display:inline-block;line-height:1}
 .est-car{font-weight:700;font-size:17px}
 .est-note{font-size:15px;line-height:1.75;color:var(--ink-2)}
+#est-go{width:100%}
+.est-next{justify-self:center;font-weight:700;font-size:15px;color:var(--ink-2)}
 
 /* ---- 伺う会社とお店・伺える地域（1つの章）：左に会社とお店、右に神奈川の地図 ---- */
 /* カードは2種類だけ：白に影（.card 系）／うすい地で影なし（.tint 系）。小さな札も2種類：うす緑の塗り／線で囲む */
@@ -561,10 +555,6 @@ html:not(.js) .wz-nav{display:none}
   .hero{padding-top:calc(var(--bar) + 14px)}
   .hero-acts{margin-top:14px;gap:8px}
   .say{font-size:16.5px}
-  .quick{padding:12px 12px 10px;border-radius:16px}
-  .quick-ch{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .quick-b{min-height:54px;font-size:16px}
-  .quick-note{font-size:13.5px}
   .act-note{font-size:14px}
   .show-view{aspect-ratio:3/2}
   .show-note{font-size:12px;margin-top:4px}
@@ -704,7 +694,7 @@ html:not(.js) .wz-nav{display:none}
   /* 最初の画面：携帯では、2つ目の札・安心の印・相場へのリンクは出さない（すぐ下の章に同じ中身がある） */
   .hero-tag span:last-child,.trust-box,.hero-souba{display:none}
   .lead{margin-top:20px;font-size:16px;line-height:1.75}
-  .quick-note,.act-note{font-size:14px}
+  .act-note{font-size:14px}
   .show-note{font-size:14px}
   /* 相場 */
   .est-note{font-size:14px}
@@ -764,6 +754,6 @@ html:not(.js) .wz-nav{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .btn,.quick-b,.dcol span,.wz-prog i,.dock,.faq-list summary::after,.bay-ph img,.step::after,.step-no{transition:none}
+  .btn,.dcol span,.wz-prog i,.dock,.faq-list summary::after,.bay-ph img,.step::after,.step-no{transition:none}
   .dlg[open]{animation:none}
 }
