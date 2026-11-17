@@ -570,4 +570,15 @@
     r.style.transform = 'translateY(0)';
   });
 
+  /* 買い取る車：写真が横からすべり込み、少し引いて止まる／流れ：線がのびて、番号が順に光る */
+  onSight($$('.bays, .steps'), el => el.classList.add('ready'), el => { void el.offsetWidth; el.classList.remove('ready'); });
+
+  /* ちがい：一括査定の電話が揺れる／写真の帯：ゆっくり寄る（見えたときに1回だけ） */
+  const once = (el, cls, threshold) => {
+    if (!el) return;
+    const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { el.classList.add(cls); io.disconnect(); } }, { threshold });
+    io.observe(el);
+  };
+  once($('.diff'), 'on', 0.3);
+  once($('.photo-band'), 'on', 0.35);
 })();

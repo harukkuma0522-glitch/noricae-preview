@@ -31,7 +31,9 @@ main .sub{max-width:46em}
 
 /* 写真：トップの最初の画面と同じ見せ方（角丸・やわらかい影）。今は素材写真なので「写真はイメージです」 */
 .ph-photo{min-width:0;margin:0}
-.ph-photo img{display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;object-position:50% 75%;border-radius:var(--r);box-shadow:var(--shadow);background:var(--mint-2)}
+.ph-photo picture{display:block;overflow:hidden;border-radius:var(--r);box-shadow:var(--shadow);background:var(--mint-2)}
+.ph-photo img{display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;object-position:50% 75%;transform-origin:60% 75%}
+.motion .ph-photo img{animation:kb 9s ease-out forwards}   /* ゆっくり寄る（トップの写真と同じ動き） */
 .ph-photo figcaption{margin-top:6px;font-size:13px;color:var(--ink-2);text-align:right}
 
 /* ---- ページの中の目次 ---- */
