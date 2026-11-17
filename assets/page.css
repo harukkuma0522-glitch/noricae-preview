@@ -301,6 +301,19 @@ main .sub{max-width:46em}
   .final-copy>p{font-size:16px}
   .final-wait{padding:18px 16px;gap:14px}
 }
+@media (max-width:720px){
+  /* 携帯の読みやすさ（site.css と同じ決まり：本文16px以上・補足14px以上・行間1.75） */
+  .ph-lead{font-size:16px;line-height:1.75}
+  .card p,.loan-steps b+span,.insp-panel dd,.ticks li,.final-copy>p,.final-shop>p{font-size:16px;line-height:1.75}
+  .steps5 span:not(.when){font-size:16px;line-height:1.75}
+  .shops li{font-size:15px}
+  .tbl td,.shaken table{font-size:15px}
+  .shaken-cap{font-size:14px}
+  .chips li{font-size:15px}
+  .pr-band-head p{font-size:15px}
+  .pr-chips b{font-size:17px}
+  .pr-chips span{font-size:14px}
+}
 @media (max-width:380px){
   .insp-list{grid-template-columns:minmax(0,1fr)}
   .insp-list button{min-height:46px}

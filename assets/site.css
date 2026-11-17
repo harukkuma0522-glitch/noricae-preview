@@ -647,6 +647,66 @@ html:not(.js) .wz-nav{display:none}
   .step h3{grid-column:2;font-size:18px;align-self:center;min-height:36px;display:flex;align-items:center}
   .step>p:not(.step-no){grid-column:2;font-size:15.5px;line-height:1.65}
 }
+@media (max-width:720px){
+  /* ==== 携帯の読みやすさ（2026-11-17。「文字が多く、詰まって見える」と言われて） ====
+     目安はデジタル庁デザインシステム：本文16px以上、補足は14px（14px未満は使わない）、本文の行間は1.7倍以上、字間0.02em。
+     1つの章で言うことは1つ。小さな札と注記を減らし、余白を広く。ここは上の携帯の決まりより後に置き、上書きする。 */
+  :root{--sec:60px}
+  body{letter-spacing:.02em}
+  .sec h2{font-size:clamp(24px,6.8vw,27px);line-height:1.45}
+  .kick{font-size:14px;margin-bottom:10px}
+  .sub{margin-top:12px;font-size:16px;line-height:1.75}
+  .note{margin-top:16px;font-size:14px;line-height:1.7}
+  /* 最初の画面：携帯では、2つ目の札・安心の印・相場へのリンクは出さない（すぐ下の章に同じ中身がある） */
+  .hero-tag span:last-child,.trust-box,.hero-souba{display:none}
+  .lead{margin-top:20px;font-size:16px;line-height:1.75}
+  .quick-note,.act-note{font-size:14px}
+  .show-note{font-size:14px}
+  /* 相場 */
+  .est-note{font-size:14px}
+  /* お店と地域 */
+  .shop-grid{gap:44px}
+  .since{margin-top:18px}
+  .shop-say{margin-top:14px;font-size:16px;line-height:1.8}
+  .stores{margin-top:22px}
+  .stores span,.stores a{font-size:15px}
+  .area-sub{font-size:16px}
+  .kmap figcaption{font-size:14px}
+  /* 約束 */
+  .dgs{gap:14px;margin-top:24px}
+  .dg{gap:8px;padding:20px}
+  .dg-tag{font-size:14px}
+  .dg-v{font-size:32px}
+  .dg>p:not(.dg-tag){font-size:16px;line-height:1.75}
+  .ex{font-size:15px!important;line-height:1.75!important}
+  /* ちがい */
+  .cmp td{font-size:16px;line-height:1.65}
+  .cmp tbody th{font-size:15px}
+  .cmp td.us::before,.cmp td:not(.us)::before{font-size:14px}
+  .diff-tip{font-size:16px}
+  /* 買い取る車 */
+  .when-list li{font-size:15px}
+  .bays{gap:12px}
+  .bay ul{font-size:16px}
+  .bay-go{font-size:15px}
+  .hero-tag{font-size:14px}
+  .photo-band span{font-size:16px}
+  .photo-band small{font-size:14px}
+  .family{font-size:16px;line-height:1.75}
+  /* 流れ */
+  .step>p:not(.step-no){font-size:16px;line-height:1.75}
+  /* 質問・申込み・会社・下 */
+  .faq-list summary{font-size:17px}
+  .faq-list details p{font-size:16px;line-height:1.8}
+  .apply-copy>p{font-size:16px}
+  .co div{font-size:15px}
+  .co dt{font-size:14px}
+  .foot-in{font-size:14px}
+  /* 下の帯の小さな字は折り返さない（字間を広げても1行に） */
+  .dock b,.dock small{letter-spacing:0;white-space:nowrap}
+  /* 開発用の「確認用」の札は、携帯では文に重なるので出さない（本番では消す） */
+  .dev-note{display:none}
+}
 @media (max-width:380px){
   .hero h1{font-size:clamp(28px,9vw,34px)}
   .hero-tag span:last-child{display:none}
