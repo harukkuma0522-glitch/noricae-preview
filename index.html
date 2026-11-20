@@ -10,93 +10,241 @@
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Yomogi&family=Zen+Maru+Gothic:wght@500;700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <script>(function(){var d=document.documentElement,c=navigator.connection;d.lang=d.lang||'ja';d.classList.add('js','no-line');if(c&&c.saveData)d.classList.add('save');if(matchMedia('(prefers-reduced-motion: no-preference)').matches&&!(c&&c.saveData))d.classList.add('motion')})();</script>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" fill="currentColor"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="kasure" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.4 0 0 0 1.9" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+  </defs>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+  <symbol id="i-line" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.6 1.6 4.9 4 6.3V21l3.6-2.4c.8.2 1.6.3 2.4.3 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></symbol>
+  <symbol id="i-stamp" viewBox="0 0 100 100"><g filter="url(#kasure)"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width="2"/><text x="50" y="46" text-anchor="middle" class="st">約</text><text x="50" y="76" text-anchor="middle" class="st">束</text></g></symbol>
+</svg>
 
 <a class="skip" href="#main">本文へ移動</a>
 
 <header class="bar">
-  <a class="bar-logo" href="#top" aria-label="ノリカエ.com ページの先頭へ">
-    <span class="logo" aria-hidden="true"><i></i><i></i><span class="logo-t">ノリカエ<small>.com</small></span></span>
-    <span class="bar-by"><b>神奈川の出張車買取</b><small>運営：バルスリサイクル</small></span>
-  </a>
-  <nav class="bar-nav" aria-label="ページの中の案内">
-    <a href="usedcar.html">中古車</a><a href="haisha.html">廃車</a><a href="truck.html">商用車</a><a href="#price">相場</a><a href="#flow">流れ</a><a href="#faq">質問</a>
-  </nav>
-  <a class="bar-tel" href="tel:0120979574" data-track="tel" data-place="header"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span><span class="tel-no">0120-979-574</span><small>通話無料・毎日8:00〜23:00</small></span></a>
-  <a class="btn btn-go bar-cta" href="#apply" data-apply data-place="header">無料査定</a>
-  <a class="bar-call" href="tel:0120979574" data-track="tel" data-place="header"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span>電話</span></a>
-  <details class="bar-menu">
-    <summary>メニュー</summary>
-    <nav class="bar-panel" aria-label="メニュー"><a href="#price">相場を見る</a><a href="#shop">伺う会社とお店</a><a href="#promise">6つのお約束</a><a href="usedcar.html">中古車の買取</a><a href="haisha.html">廃車・古い車の買取</a><a href="truck.html">商用車・トラックの買取</a><a href="#flow">売るまでの流れ</a><a href="#area">伺える地域</a><a href="#faq">よくある質問</a><a href="#company">運営会社</a></nav>
-  </details>
+  <div class="wrap bar-in">
+    <a class="logo" href="#top" aria-label="ノリカエ.com ページの先頭へ">
+      <img src="assets/icon.svg" alt="" width="44" height="44">
+      <span class="logo-t"><b>ノリカエ<small>.com</small></b><span>神奈川の出張車買取｜運営：バルスリサイクル</span></span>
+    </a>
+    <nav class="nav" aria-label="サイトの案内">
+      <a href="usedcar.html">中古車</a><a href="haisha.html">廃車</a><a href="truck.html">商用車</a><a href="#price">相場</a><a href="#flow">流れ</a><a href="#faq">質問</a>
+    </nav>
+    <a class="bar-tel" href="tel:0120979574" data-place="header"><b><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg>0120-979-574</b><small>通話無料・毎日8:00〜23:00</small></a>
+    <a class="btn btn-go bar-go" href="#apply" data-apply data-place="header">無料査定</a>
+    <details class="bar-menu">
+      <summary>メニュー</summary>
+      <nav class="bar-panel" aria-label="メニュー"><a href="#price">相場を見る</a><a href="#promise">6つのお約束</a><a href="usedcar.html">中古車の買取</a><a href="haisha.html">廃車・古い車の買取</a><a href="truck.html">商用車・トラックの買取</a><a href="#flow">売るまでの流れ</a><a href="#shop">伺う会社とお店</a><a href="#area">伺える地域</a><a href="#faq">よくある質問</a><a href="#company">運営会社</a></nav>
+    </details>
+  </div>
 </header>
 
 <main id="main">
 
-<section class="hero" id="top" aria-labelledby="hero-title">
-  <div class="wrap hero-grid">
-    <h1 id="hero-title"><span class="hero-tag"><span>神奈川県の出張車買取</span><span>厚木本店・相模原店</span></span><span class="ln">下取りの前に、</span><span class="ln">家の前で。</span></h1>
+<section class="hero run" id="top" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <div class="wrap">
+      <div class="hero-copy-in">
+        <p class="tags"><span>神奈川県の出張車買取</span><span>厚木本店・相模原店</span></p>
+        <h1 class="h1" id="hero-title"><span class="ln">下取りの前に、</span><span class="ln"><span class="mark">家の前で。<svg class="uline" viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M6 18 C 60 8, 120 26, 180 15 S 270 8, 294 16"/></svg></span></span></h1>
+        <p class="lead">下取りに出す前に、ご自宅で金額を聞いてみませんか。来るのは、当社1社だけです。</p>
+        <p class="say">「今日決めて」とは、言いません。</p>
+      </div>
+    </div>
+  </div>
 
-    <div class="show" id="show" role="region" aria-roledescription="スライドショー" aria-label="買い取る車の写真">
-      <div class="show-view">
-        <figure class="slide is-on" data-img="assets/hero/hero-07" data-alt="黄色い家の前の駐車場に止まっている、白い軽自動車">
-          <picture>
-            <source type="image/avif" srcset="assets/hero/hero-07-640.avif 640w, assets/hero/hero-07-960.avif 960w, assets/hero/hero-07-1440.avif 1440w" sizes="(min-width: 900px) 52vw, calc(100vw - 32px)">
-            <img src="assets/hero/hero-07-960.webp" srcset="assets/hero/hero-07-640.webp 640w, assets/hero/hero-07-960.webp 960w, assets/hero/hero-07-1440.webp 1440w" sizes="(min-width: 900px) 52vw, calc(100vw - 32px)" width="1440" height="1080" alt="黄色い家の前の駐車場に止まっている、白い軽自動車" fetchpriority="high">
-          </picture>
-          <figcaption>ご自宅の前で査定します</figcaption>
-        </figure>
-        <figure class="slide" data-img="assets/hero/hero-08" data-alt="和風の家の前の砂利の駐車場に止まっている、ベージュの軽自動車と白いバン"><figcaption>軽自動車も</figcaption></figure>
-        <figure class="slide" data-img="assets/hero/hero-09" data-alt="木の板の壁の前に止まっている、白い軽トラック"><figcaption>軽トラ・トラックも</figcaption></figure>
-        <figure class="slide" data-img="assets/hero/hero-05" data-alt="木の下に長く置かれている、古い軽自動車が2台"><figcaption>古い車・動かない車も</figcaption></figure>
-      </div>
-      <p class="show-note">写真はイメージです</p>
-    </div>
+  <div class="scene run" id="scene" data-live>
+    <svg viewBox="0 0 1600 800" preserveAspectRatio="xMaxYMax slice" role="img" aria-labelledby="scene-t">
+      <title id="scene-t">ノリカエ.comの軽トラックが家の前に来て、あいさつをして、その場で査定書を出して判子を押す絵</title>
+      <defs>
+        <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9D8F0"/><stop offset=".78" stop-color="#DDF1F9"/></linearGradient>
+        <symbol id="cloud" viewBox="-3 -3 146 70"><path d="M24 58 C8 58 2 48 4 40 C6 30 16 26 26 28 C28 14 42 6 56 8 C66 0 86 0 96 12 C108 8 124 14 126 28 C136 30 140 40 138 48 C136 56 128 58 120 58 Z" fill="#FFFFFF" stroke="#9CCBE3" stroke-width="2" stroke-linejoin="round"/></symbol>
+      </defs>
+      <rect width="1600" height="800" fill="url(#g-sky)"/>
 
-    <p class="lead">下取りに出す前に、ご自宅で金額を聞いてみませんか。来るのは、当社1社だけです。</p>
-    <div class="trust-box">
-      <ul class="trust" aria-label="ノリカエ.comのお約束から">
-        <li>出張・査定<b>0円</b></li><li><b>営業電話なし</b></li><li>金額は<b>7日間</b>そのまま</li>
-      </ul>
-      <p class="trust-note">費用0円は神奈川県内。7日間の約束には条件があります。<a href="#promise">お約束と条件を見る</a></p>
-    </div>
-    <div class="hero-acts">
-      <p class="say">「今日決めて」とは、言いません。</p>
-      <div class="hero-go">
-        <a class="btn btn-go" href="#apply" data-apply data-place="hero">無料で査定を申し込む</a>
-        <p class="act-note">約1分・お名前と電話番号だけ</p>
+      <!-- 太陽 -->
+      <g transform="translate(1470 165)">
+        <g class="rays" stroke="#FFB800" stroke-width="9" stroke-linecap="round">
+          <line y1="-78" y2="-100"/><line y1="-78" y2="-100" transform="rotate(45)"/><line y1="-78" y2="-100" transform="rotate(90)"/><line y1="-78" y2="-100" transform="rotate(135)"/>
+          <line y1="-78" y2="-100" transform="rotate(180)"/><line y1="-78" y2="-100" transform="rotate(225)"/><line y1="-78" y2="-100" transform="rotate(270)"/><line y1="-78" y2="-100" transform="rotate(315)"/>
+        </g>
+        <circle r="58" fill="#FFD21E" stroke="#1F2A44" stroke-width="4"/>
+        <circle cx="-19" cy="-6" r="5.5" fill="#1F2A44"/><circle cx="19" cy="-6" r="5.5" fill="#1F2A44"/>
+        <path d="M-18 14 Q0 30 18 14" fill="none" stroke="#1F2A44" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="-34" cy="10" r="8" fill="#F59A8C" opacity=".7"/><circle cx="34" cy="10" r="8" fill="#F59A8C" opacity=".7"/>
+      </g>
+
+      <!-- 雲 -->
+      <g transform="translate(200 70)"><g class="cl" style="--a:1500px;--b:-600px;--dur:120s;--del:-85.7s"><use href="#cloud" width="230" height="110"/></g></g>
+      <g transform="translate(560 230)"><g class="cl" style="--a:1140px;--b:-960px;--dur:90s;--del:-48.9s"><use href="#cloud" width="150" height="72"/></g></g>
+      <g transform="translate(1130 60)"><g class="cl" style="--a:570px;--b:-1530px;--dur:110s;--del:-29.9s"><use href="#cloud" width="210" height="100"/></g></g>
+
+      <!-- 鳥 -->
+      <g transform="translate(1180 215)"><g class="birds" style="--a:-1380px;--b:620px;--dur:46s;--del:-31.7s" fill="none" stroke="#1F2A44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path class="bird" d="M0 0 q9 -9 18 0 q9 -9 18 0"/>
+        <path class="bird" d="M44 22 q7 -7 14 0 q7 -7 14 0" style="animation-delay:-.2s"/>
+      </g></g>
+
+      <!-- 丹沢の山なみ -->
+      <path d="M0 560 L90 500 L170 520 L260 450 L340 480 L420 410 L500 455 L590 420 L680 470 L770 430 L850 480 L940 440 L1030 490 L1120 450 L1210 500 L1300 470 L1400 510 L1500 480 L1600 520 L1600 660 L0 660 Z" fill="#A7C9DC" stroke="#A7C9DC" stroke-width="10" stroke-linejoin="round"/>
+      <path d="M0 610 Q180 540 380 585 T780 575 T1180 560 T1600 570 L1600 662 L0 662 Z" fill="#A9D98F"/>
+      <!-- 地面と道 -->
+      <rect y="640" width="1600" height="160" fill="#8CCB6E"/>
+      <g stroke="#5E9E45" stroke-width="3" stroke-linecap="round" fill="none">
+        <path d="M60 662 l6 -10 l6 10"/><path d="M330 668 l6 -10 l6 10"/><path d="M610 660 l6 -10 l6 10"/><path d="M1540 664 l6 -10 l6 10"/>
+      </g>
+      <rect y="676" width="1600" height="16" fill="#E8EDF1"/>
+      <rect y="692" width="1600" height="92" fill="#C7D0DA"/>
+      <line x1="0" y1="692" x2="1600" y2="692" stroke="#1F2A44" stroke-width="3"/>
+      <line x1="0" y1="738" x2="1600" y2="738" stroke="#FFFFFF" stroke-width="6" stroke-dasharray="46 34"/>
+      <rect y="784" width="1600" height="16" fill="#8CCB6E"/>
+      <line x1="0" y1="784" x2="1600" y2="784" stroke="#1F2A44" stroke-width="3"/>
+
+      <!-- 木 -->
+      <rect x="1092" y="470" width="20" height="212" fill="#9A6633" stroke="#1F2A44" stroke-width="3"/>
+      <g class="tree" fill="#6DB65B" stroke="#1F2A44" stroke-width="3">
+        <circle cx="1060" cy="488" r="46"/><circle cx="1146" cy="488" r="48"/><circle cx="1102" cy="446" r="66"/>
+      </g>
+
+      <!-- 家 -->
+      <g class="smoke" fill="#FFFFFF" stroke="#1F2A44" stroke-width="2"><circle cx="1418" cy="292" r="10"/><circle cx="1418" cy="292" r="10"/><circle cx="1418" cy="292" r="10"/></g>
+      <rect x="1400" y="300" width="36" height="80" fill="#C98B4E" stroke="#1F2A44" stroke-width="4"/>
+      <rect x="1150" y="410" width="320" height="272" fill="#FFFFFF" stroke="#1F2A44" stroke-width="4"/>
+      <polygon points="1120,420 1310,280 1500,420" fill="#E2574C" stroke="#1F2A44" stroke-width="4" stroke-linejoin="round"/>
+      <circle cx="1310" cy="372" r="21" fill="#BFE3F4" stroke="#1F2A44" stroke-width="4"/>
+      <path d="M1310 351 V393 M1289 372 H1331" stroke="#1F2A44" stroke-width="3"/>
+      <rect x="1272" y="444" width="82" height="72" rx="4" fill="#BFE3F4" stroke="#1F2A44" stroke-width="4"/>
+      <path d="M1313 444 V516 M1272 480 H1354" stroke="#1F2A44" stroke-width="3"/>
+      <rect x="1376" y="444" width="72" height="72" rx="4" fill="#BFE3F4" stroke="#1F2A44" stroke-width="4"/>
+      <path d="M1412 444 V516 M1376 480 H1448" stroke="#1F2A44" stroke-width="3"/>
+      <rect x="1266" y="518" width="94" height="14" rx="3" fill="#C98B4E" stroke="#1F2A44" stroke-width="3"/>
+      <g class="flw" stroke="#1F2A44" stroke-width="2">
+        <circle cx="1282" cy="511" r="7" fill="#E2574C"/><circle cx="1300" cy="509" r="7" fill="#FFD21E"/><circle cx="1318" cy="511" r="7" fill="#E2574C"/><circle cx="1336" cy="509" r="7" fill="#FFD21E"/>
+      </g>
+      <rect x="1180" y="560" width="64" height="122" rx="6" fill="#C98B4E" stroke="#1F2A44" stroke-width="4"/>
+      <rect x="1196" y="576" width="32" height="26" rx="3" fill="#BFE3F4" stroke="#1F2A44" stroke-width="3"/>
+      <circle cx="1232" cy="626" r="4.5" fill="#1F2A44"/>
+      <rect x="1170" y="680" width="84" height="10" rx="2" fill="#E8EDF1" stroke="#1F2A44" stroke-width="3"/>
+      <path d="M1256 682 L1260 656 H1284 L1288 682 Z" fill="#E2574C" stroke="#1F2A44" stroke-width="3" stroke-linejoin="round"/>
+      <g class="flw" fill="#6DB65B" stroke="#1F2A44" stroke-width="2.5"><circle cx="1264" cy="648" r="9"/><circle cx="1280" cy="646" r="9"/><circle cx="1272" cy="634" r="10"/></g>
+
+      <!-- お客様の車 -->
+      <image href="assets/img/car-side.webp" x="1290" y="578" width="300" height="121"/>
+
+      <!-- ノリカエ.comの車 -->
+      <g class="kei">
+        <g class="kei-bob">
+          <g class="puffs" fill="#FFFFFF" stroke="#1F2A44" stroke-width="2">
+            <circle class="pf" cx="756" cy="678" r="12" style="--d:.3s"/><circle class="pf" cx="756" cy="678" r="12" style="--d:.53s"/><circle class="pf" cx="756" cy="678" r="12" style="--d:.76s"/>
+          </g>
+          <image href="assets/img/kei-side.webp" x="760" y="548" width="300" height="160"/>
+          <rect x="948" y="621" width="72" height="23" rx="5" fill="#FFD21E" stroke="#1F2A44" stroke-width="2"/>
+          <text x="984" y="637.5" text-anchor="middle" class="t-b" font-size="13.5" fill="#1F2A44">ノリカエ</text>
+        </g>
+      </g>
+
+      <!-- あいさつ -->
+      <g class="bubble">
+        <path d="M805 392 H1075 Q1105 392 1105 422 V460 Q1105 490 1075 490 H1018 L1000 532 L992 490 H805 Q775 490 775 460 V422 Q775 392 805 392 Z" fill="#FFFFFF" stroke="#1F2A44" stroke-width="4" stroke-linejoin="round"/>
+        <text x="940" y="434" text-anchor="middle" class="t-b" font-size="31" fill="#1F2A44">こんにちは。</text>
+        <text x="940" y="474" text-anchor="middle" class="t-b" font-size="31" fill="#1F2A44">ノリカエ.comです</text>
+      </g>
+
+      <!-- 書き添え -->
+      <g class="note">
+        <text x="940" y="64" text-anchor="middle" class="t-n" font-size="33" fill="#1F2A44">金額は、その場で。</text>
+        <text x="940" y="104" text-anchor="middle" class="t-n" font-size="33" fill="#1F2A44">内訳つきの書面で。</text>
+      </g>
+
+      <!-- 査定書 -->
+      <g class="paper">
+        <g transform="rotate(-3 940 248)">
+          <rect x="823" y="133" width="250" height="245" rx="8" fill="#1F2A44" opacity=".14"/>
+          <rect x="815" y="125" width="250" height="245" rx="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="4"/>
+          <text x="940" y="172" text-anchor="middle" class="t-h" font-size="34" fill="#1F2A44">査定書</text>
+          <path d="M862 186 H1018" stroke="#1F2A44" stroke-width="2"/>
+          <text x="838" y="222" class="t-b" font-size="19" fill="#46526E">お車</text>
+          <rect x="895" y="209" width="145" height="14" rx="7" fill="#CFE0EA"/>
+          <text x="838" y="266" class="t-b" font-size="19" fill="#46526E">金額</text>
+          <rect x="890" y="240" width="155" height="38" rx="8" fill="#FFD21E"/>
+          <text x="1034" y="268" text-anchor="end" class="t-b" font-size="24" fill="#1F2A44">◯◯万円</text>
+          <text x="838" y="308" class="t-b" font-size="19" fill="#46526E">内訳</text>
+          <rect x="895" y="296" width="72" height="10" rx="5" fill="#CFE0EA"/><rect x="895" y="314" width="60" height="10" rx="5" fill="#CFE0EA"/><rect x="895" y="332" width="80" height="10" rx="5" fill="#CFE0EA"/>
+          <g transform="translate(1012 326)">
+            <g class="seal-in" filter="url(#kasure)" fill="none" stroke="#D23A2E">
+              <circle r="33" stroke-width="4.5"/><circle r="26" stroke-width="1.6"/>
+              <text y="-3" text-anchor="middle" class="t-h" font-size="17" fill="#D23A2E" stroke="none">ノリ</text>
+              <text y="17" text-anchor="middle" class="t-h" font-size="17" fill="#D23A2E" stroke="none">カエ</text>
+            </g>
+            <circle class="seal-ring" r="33" fill="none" stroke="#D23A2E" stroke-width="3"/>
+          </g>
+        </g>
+        <text x="1080" y="300" class="t-n pon" font-size="30" fill="#D23A2E">ぽん！</text>
+      </g>
+    </svg>
+    <button class="replay" id="replay" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4.5h4.5"/></svg>もう一度見る</button>
+  </div>
+
+  <div class="hero-band">
+    <div class="wrap">
+      <div>
+        <ul class="trust" aria-label="ノリカエ.comのお約束から">
+          <li>出張・査定<b>0円</b></li><li><b>営業電話</b>なし</li><li>金額は<b>7日間</b>そのまま</li>
+        </ul>
+        <p class="trust-note">費用0円は神奈川県内。7日間の約束には条件があります。<a href="#promise">お約束と条件を見る</a></p>
       </div>
-      <div class="hero-tel">
-        <a class="btn btn-tel" href="tel:0120979574" data-track="tel" data-place="hero"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
-        <p class="act-note">通話無料・毎日8:00〜23:00<span class="night" hidden>ただいま受付時間外です（フォームは24時間）</span></p>
+      <div class="hero-acts">
+        <div>
+          <a class="btn btn-go wig" href="#apply" data-apply data-place="hero">無料で査定を申し込む</a>
+          <p class="act-note">約1分・お名前と電話番号だけ</p>
+        </div>
+        <div>
+          <a class="btn btn-tel" href="tel:0120979574" data-place="hero"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
+          <p class="act-note">通話無料・毎日8:00〜23:00<span class="night" hidden>ただいま受付時間外です（フォームは24時間）</span></p>
+        </div>
       </div>
+      <a class="hero-souba" href="#price">お名前・電話番号なしで、相場を見る</a>
     </div>
-    <a class="hero-souba" href="#price">お名前・電話番号なしで、相場を見る</a>
   </div>
 </section>
 
-<section class="price sec s-mint" id="price" aria-labelledby="price-title" data-sample="1">
+<section class="album" aria-label="伺う車の写真">
+  <div class="wrap">
+    <div class="album-row">
+      <figure class="pola" style="--r:-3deg;--i:0"><img src="assets/hero/hero-07-640.webp" srcset="assets/hero/hero-07-640.webp 640w, assets/hero/hero-07-960.webp 960w" sizes="(min-width: 760px) 25vw, 72vw" width="640" height="480" alt="黄色い家の前の駐車場に止まっている、白い軽自動車" loading="lazy" decoding="async"><figcaption>ご自宅の前で査定します</figcaption></figure>
+      <figure class="pola" style="--r:2deg;--i:1"><img src="assets/hero/hero-08-640.webp" srcset="assets/hero/hero-08-640.webp 640w, assets/hero/hero-08-960.webp 960w" sizes="(min-width: 760px) 25vw, 72vw" width="640" height="480" alt="和風の家の前の砂利の駐車場に止まっている、ベージュの軽自動車と白いバン" loading="lazy" decoding="async"><figcaption>軽自動車も</figcaption></figure>
+      <figure class="pola" style="--r:-1.5deg;--i:2"><img src="assets/hero/hero-09-640.webp" srcset="assets/hero/hero-09-640.webp 640w, assets/hero/hero-09-960.webp 960w" sizes="(min-width: 760px) 25vw, 72vw" width="640" height="480" alt="木の板の壁の前に止まっている、白い軽トラック" loading="lazy" decoding="async"><figcaption>軽トラ・トラックも</figcaption></figure>
+      <figure class="pola" style="--r:3deg;--i:3"><img src="assets/hero/hero-05-640.webp" srcset="assets/hero/hero-05-640.webp 640w, assets/hero/hero-05-960.webp 960w" sizes="(min-width: 760px) 25vw, 72vw" width="640" height="480" alt="木の下に長く置かれている、古い軽自動車が2台" loading="lazy" decoding="async"><figcaption>古い車・動かない車も</figcaption></figure>
+    </div>
+    <p class="album-note">写真はイメージです</p>
+  </div>
+</section>
+<section class="sec bg-pale" id="price" aria-labelledby="price-title">
+  <svg class="wv" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap price-grid">
     <div>
       <p class="kick">お名前も電話番号も、いりません</p>
-      <h2 id="price-title">まず、だいたいの金額を見る。</h2>
+      <h2 class="h2" id="price-title">まず、だいたいの金額を見る。</h2>
       <p class="sub">メーカー・車種・年式・走った距離を選ぶだけ。</p>
       <form class="est" id="est" aria-label="買取の目安を調べる">
-        <div class="f"><label for="e-maker">メーカー</label><select id="e-maker"><option>読み込んでいます</option></select></div>
-        <div class="f"><label for="e-model">車種</label><select id="e-model"><option>読み込んでいます</option></select></div>
-        <div class="f"><label for="e-year">年式</label><select id="e-year"><option>読み込んでいます</option></select></div>
-        <div class="f"><label for="e-km">走った距離</label><select id="e-km"><option>読み込んでいます</option></select></div>
+        <div class="f"><label for="e-maker">メーカー</label><select id="e-maker"><option>トヨタ</option></select></div>
+        <div class="f"><label for="e-model">車種</label><select id="e-model"><option>プリウス</option></select></div>
+        <div class="f"><label for="e-year">年式</label><select id="e-year"><option>2016年（平成28年）</option></select></div>
+        <div class="f"><label for="e-km">走った距離</label><select id="e-km"><option>5万〜7万km</option></select></div>
       </form>
     </div>
-    <div class="est-out">
+    <div class="est-out" id="est-out" data-live>
       <p class="est-label">買取の目安 <span class="sample">見本の数字</span></p>
-      <p class="odo" aria-hidden="true"><span class="odo-n" id="odo-lo"></span><span class="odo-w">〜</span><span class="odo-n" id="odo-hi"></span><span class="odo-u">万円</span></p>
-      <p class="vh" id="est-live" aria-live="polite"></p>
-      <p class="est-car" id="est-car"></p>
+      <p class="odo" aria-hidden="true"><span class="odo-n" id="odo-lo">73</span><span class="odo-w">〜</span><span class="odo-n" id="odo-hi">96</span><span class="odo-u">万円</span></p>
+      <p class="vh" id="est-live" aria-live="polite">買取の目安は、73万円から96万円です（見本の数字）。</p>
+      <p class="est-car" id="est-car">トヨタ プリウス／2016年／5万〜7万km</p>
       <p class="est-note">目安です。正式な金額は、お車を見てお伝えします。</p>
       <a class="btn btn-go" href="#apply" id="est-go">この車で、無料査定を申し込む</a>
       <p class="est-next">あとは、お名前と電話番号だけです</p>
@@ -104,44 +252,293 @@
   </div>
 </section>
 
-<section class="shop sec" id="shop" aria-labelledby="shop-title">
+<section class="sec bg-white" id="promise" aria-labelledby="promise-title">
+  <svg class="wv flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kick">ノリカエ.comのお約束</p>
+      <h2 class="h2" id="promise-title">売ったあとで困らないための、6つのお約束。</h2>
+      <p class="sub">条件や例外も、先にお伝えします。</p>
+    </div>
+    <div class="dgs">
+      <article class="dg" data-rv style="--i:0">
+        <span class="stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#i-stamp"/><circle class="ink" cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="3"/></svg></span>
+        <p class="dg-tag">ご契約のあと</p>
+        <h3 class="dg-v"><span class="mk">減額なし</span></h3>
+        <p>当社の見落としで、あとから金額を下げることはしません。</p>
+        <p class="ex"><b>ただし</b>修復歴（骨格まで直した事故の跡）・水没・メーターの巻き戻しを伝えていなかったときと、お引き渡しまでの事故・故障だけ。</p>
+      </article>
+      <article class="dg" data-rv style="--i:1">
+        <span class="stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#i-stamp"/><circle class="ink" cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="3"/></svg></span>
+        <p class="dg-tag">お引き渡しの前なら</p>
+        <h3 class="dg-v"><span class="mk">取り消し無料</span></h3>
+        <p>契約のあとも、お引き渡しの前なら無料でやめられます。</p>
+        <p class="ex"><b>ただし</b>その日に引き取るときは、引き渡しのあとは取り消せません。契約の前にお伝えします。</p>
+      </article>
+      <article class="dg" data-rv style="--i:2">
+        <span class="stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#i-stamp"/><circle class="ink" cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="3"/></svg></span>
+        <p class="dg-tag">お伝えした金額</p>
+        <h3 class="dg-v"><span class="mk">7日間</span><small>そのまま</small></h3>
+        <p>その場で決めなくて大丈夫。ご家族と相談してください。</p>
+        <p class="ex"><b>条件</b>事故や故障がなく、走った距離の増えが500km以内なら、相場が下がっても同じ金額。</p>
+      </article>
+      <article class="dg" data-rv style="--i:0">
+        <span class="stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#i-stamp"/><circle class="ink" cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="3"/></svg></span>
+        <p class="dg-tag">ご連絡・ご訪問</p>
+        <h3 class="dg-v"><small>伺うのは</small><span class="mk">1社</span><small>だけ</small></h3>
+        <p>一括査定ではありません。お断りのあと、営業の電話もしません。</p>
+      </article>
+      <article class="dg" data-rv style="--i:1">
+        <span class="stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#i-stamp"/><circle class="ink" cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="3"/></svg></span>
+        <p class="dg-tag">費用（神奈川県内）</p>
+        <h3 class="dg-v"><small>費用は</small><span class="mk">0円</span></h3>
+        <p>出張・査定・引き取り・手続きまで。お断りでも0円で、買取額から引くこともしません。</p>
+        <p class="ex"><b>ただし</b>印鑑証明書など、役所で取る書類の手数料だけはご負担です。</p>
+      </article>
+      <article class="dg" data-rv style="--i:2">
+        <span class="stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#i-stamp"/><circle class="ink" cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="3"/></svg></span>
+        <p class="dg-tag">お振込みまで</p>
+        <h3 class="dg-v"><span class="mk">3営業日</span><small>以内</small></h3>
+        <p>お車と書類がそろった日から（土日祝・年末年始を除く）。</p>
+        <p class="ex"><b>ただし</b>ローンが残る車は、ローン会社の手続きのあと。</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="sec bg-paper" id="diff" aria-labelledby="diff-title">
+  <svg class="wv" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
+  <div class="wrap">
+    <div class="diff-top">
+      <div>
+        <p class="kick">一括査定・下取りとのちがい</p>
+        <h2 class="h2" id="diff-title">かかってくる電話は、当社からだけ。</h2>
+        <p class="sub">何社もの電話を受けたくない方、家で決めたい方へ。</p>
+      </div>
+      <div class="calls" data-rv data-live aria-hidden="true">
+        <figure class="phone many">
+          <figcaption class="ph-who">一括査定<small>（多くの場合）</small></figcaption>
+          <div class="ph-body"><div class="ph-scr">
+            <p class="ph-h"><span>着信</span><i>5</i></p>
+            <ul><li style="--i:0">知らない番号</li><li style="--i:1">知らない番号</li><li style="--i:2">知らない番号</li><li style="--i:3">知らない番号</li><li style="--i:4">知らない番号</li></ul>
+          </div></div>
+          <p class="ph-say">ぷるる…ぷるる…</p>
+        </figure>
+        <figure class="phone us">
+          <figcaption class="ph-who">ノリカエ.com<small>&nbsp;</small></figcaption>
+          <div class="ph-body"><div class="ph-scr">
+            <p class="ph-h"><span>着信</span><i>1</i></p>
+            <ul><li>ノリカエ.com</li></ul>
+            <span class="smile"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#FFD21E" stroke="#1F2A44" stroke-width="5"/><path d="M33 40 q5 -7 10 0 M57 40 q5 -7 10 0" fill="none" stroke="#1F2A44" stroke-width="5" stroke-linecap="round"/><path d="M30 58 Q50 80 70 58" fill="none" stroke="#1F2A44" stroke-width="5" stroke-linecap="round"/><circle cx="24" cy="56" r="7" fill="#F59A8C" opacity=".7"/><circle cx="76" cy="56" r="7" fill="#F59A8C" opacity=".7"/></svg></span>
+          </div></div>
+          <p class="ph-say">1件だけ。</p>
+        </figure>
+      </div>
+    </div>
+    <div class="cmp-wrap">
+      <div class="cmp-scroll">
+        <table class="cmp">
+          <thead><tr><th scope="col"><span class="vh">くらべること</span></th><th scope="col" class="us">ノリカエ.com</th><th scope="col">一括査定サイト</th><th scope="col">ディーラーの下取り</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">連絡と訪問</th><td class="us">当社だけ</td><td>多くは、複数の会社から連絡が来る</td><td>そのお店だけ</td></tr>
+            <tr><th scope="row">金額</th><td class="us">その場で、内訳つきの書面で</td><td>各社の金額を待って、くらべる</td><td>値引きと合わさり、見えにくいことも</td></tr>
+            <tr><th scope="row">古い車・動かない車</th><td class="us">買い取ります。引き取りも0円</td><td>扱わない会社もある</td><td>処分の費用がかかることも</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="scroll-hint">表は横にずらして見られます</p>
+      <p class="diff-tip">下取りの見積書があれば、査定のときにお見せください。</p>
+      <p class="note">一括査定と下取りは、多くの場合の例です。</p>
+    </div>
+  </div>
+</section>
+
+<aside class="band" aria-label="お申込みのご案内">
+  <svg class="wv flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
+  <div class="band-clip" data-live aria-hidden="true"><div class="band-road"></div><div class="band-kei"><img src="assets/img/kei-side.webp" alt="" width="96" height="51" loading="lazy" decoding="async"></div></div>
+  <div class="wrap band-in">
+    <p class="band-t"><b>金額を聞くだけでも、大丈夫です。</b>約1分・お名前と電話番号だけ</p>
+    <div class="band-acts">
+      <a class="btn btn-go" href="#apply" data-apply data-place="band-1">無料で査定を申し込む</a>
+      <a class="btn btn-tel" href="tel:0120979574" data-place="band-1"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
+    </div>
+  </div>
+</aside>
+
+<section class="sec bg-white" id="cars" aria-labelledby="cars-title">
+  <svg class="wv" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kick">買い取る車</p>
+      <h2 class="h2" id="cars-title">古い車も、<span class="nw">動かない車も、</span>買い取ります。</h2>
+      <p class="sub">乗用車から4トントラックまで。車検切れの車は、積載車で伺います。</p>
+    </div>
+    <div class="when">
+      <p class="when-t" id="when-t">こんなときも、ご相談ください</p>
+      <ul class="tags-row" aria-labelledby="when-t" data-live>
+        <li class="tag" style="--i:0"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="11" width="38" height="27" rx="3" fill="#FFFFFF" stroke="#1F2A44" stroke-width="2.5"/><rect x="31" y="15" width="8" height="9" fill="#E2574C" stroke="#1F2A44" stroke-width="1.5"/><path d="M10 20h15M10 26h17M10 32h11" stroke="#1F2A44" stroke-width="2.2" stroke-linecap="round"/></svg>車検のハガキが来た</li>
+        <li class="tag" style="--i:1"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="12" width="40" height="26" rx="4" fill="#BFE3F4" stroke="#1F2A44" stroke-width="2.5"/><circle cx="15" cy="23" r="4.5" fill="#FFFFFF" stroke="#1F2A44" stroke-width="2"/><path d="M9.5 33c1.2-4 9.8-4 11 0" fill="none" stroke="#1F2A44" stroke-width="2" stroke-linecap="round"/><path d="M25 19h13M25 25h10M25 31h12" stroke="#1F2A44" stroke-width="2.2" stroke-linecap="round"/></svg>免許を返した</li>
+        <li class="tag" style="--i:2"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 34v-7l6-8h21l7 8h6v7z" fill="#FFD21E" stroke="#1F2A44" stroke-width="2.5" stroke-linejoin="round"/><circle cx="13" cy="35" r="4.5" fill="#FFFFFF" stroke="#1F2A44" stroke-width="2.5"/><circle cx="35" cy="35" r="4.5" fill="#FFFFFF" stroke="#1F2A44" stroke-width="2.5"/><path d="M46 2L33 4M46 2L37 13M46 2L45 16M38 3.4Q40 6 40.4 8.6Q43 9.6 45.6 9.6M35.4 3.7Q38 7.6 38.6 10.8Q42 12.6 45.3 12.8" fill="none" stroke="#46526E" stroke-width="1.3"/></svg>乗っていない車がある</li>
+        <li class="tag" style="--i:3"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="16" cy="15" r="6.5" fill="#F6D3B5" stroke="#1F2A44" stroke-width="2.5"/><path d="M6 42c0-10 4.5-15 10-15s10 5 10 15z" fill="#8CCB6E" stroke="#1F2A44" stroke-width="2.5" stroke-linejoin="round"/><circle cx="33" cy="19" r="5.5" fill="#F6D3B5" stroke="#1F2A44" stroke-width="2.5"/><path d="M25 42c0-8 3.6-12 8-12s8 4 8 12z" fill="#BFE3F4" stroke="#1F2A44" stroke-width="2.5" stroke-linejoin="round"/><path d="M10.5 12.5a6.5 6.5 0 0 1 11 0" fill="none" stroke="#FFFFFF" stroke-width="2.5"/></svg>親の車を任された</li>
+        <li class="tag" style="--i:4"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M40 3L35 18" stroke="#1F2A44" stroke-width="2.5" stroke-linecap="round"/><path d="M35 18q-3 2.5-.5 4.5" fill="none" stroke="#1F2A44" stroke-width="2.5" stroke-linecap="round"/><g transform="rotate(-14 22 32)"><path d="M4 36v-6l5-7h20l6 7h5v6z" fill="#FFFFFF" stroke="#1F2A44" stroke-width="2.5" stroke-linejoin="round"/><circle cx="12" cy="37" r="4" fill="#C7D0DA" stroke="#1F2A44" stroke-width="2.5"/><circle cx="32" cy="37" r="4" fill="#C7D0DA" stroke="#1F2A44" stroke-width="2.5"/></g><path d="M2 45h44" stroke="#1F2A44" stroke-width="2.5" stroke-linecap="round"/></svg>動かない車がある</li>
+      </ul>
+      <p class="family"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#FFFFFF" stroke="#1F2A44" stroke-width="3"/><path d="M40 60 C 20 46 18 34 26 28 C 32 24 38 27 40 32 C 42 27 48 24 54 28 C 62 34 60 46 40 60 Z" fill="#E2574C" stroke="#1F2A44" stroke-width="3" stroke-linejoin="round"/></svg><span><b>ご家族の車も。</b>運転をやめた親の車、亡くなった方の車も、ご家族からご相談ください。<a href="#faq-family">くわしく見る</a></span></p>
+    </div>
+    <div class="bays">
+      <article class="bay" data-rv style="--i:0">
+        <div class="bay-stage"><span class="bay-hop"><img class="bay-car" src="assets/img/car-side.webp" alt="" width="1400" height="566" loading="lazy" decoding="async"></span></div>
+        <div class="bay-body"><h3>乗用車・ミニバン</h3><ul><li>ローンが残っている車</li><li>10年・10万kmをこえた車</li></ul><div class="bay-links"><a class="bay-go" href="usedcar.html">中古車の買取を見る</a><a class="bay-apply" href="#apply" data-apply data-kind="乗用車・ミニバン" data-place="cars">この車で査定を申し込む</a></div></div>
+      </article>
+      <article class="bay" data-rv style="--i:1">
+        <div class="bay-stage"><span class="bay-hop"><img class="bay-car" src="assets/img/kei-side.webp" alt="" width="1400" height="746" loading="lazy" decoding="async"></span></div>
+        <div class="bay-body"><h3>軽自動車・軽トラ</h3><ul><li>軽トラック・軽バン</li><li>黒ナンバーの軽バンも</li></ul><div class="bay-links"><a class="bay-go" href="truck.html">軽トラの買取を見る</a><a class="bay-apply" href="#apply" data-apply data-kind="軽自動車・軽トラ" data-place="cars">この車で査定を申し込む</a></div></div>
+      </article>
+      <article class="bay" data-rv style="--i:2">
+        <div class="bay-stage"><span class="bay-hop"><img class="bay-car" src="assets/img/truck-side.webp" alt="" width="1400" height="748" loading="lazy" decoding="async"></span></div>
+        <div class="bay-body"><h3>トラック・会社の車</h3><ul><li>2トン・4トントラック</li><li>会社の車を、まとめて</li></ul><div class="bay-links"><a class="bay-go" href="truck.html">トラックの買取を見る</a><a class="bay-apply" href="#apply" data-apply data-kind="トラック・会社の車" data-place="cars">この車で査定を申し込む</a></div></div>
+      </article>
+      <article class="bay" data-rv style="--i:3">
+        <div class="bay-stage"><span class="bay-hop"><img class="bay-car" src="assets/img/sedan-side.webp" alt="" width="1400" height="443" loading="lazy" decoding="async"></span></div>
+        <div class="bay-body"><h3>廃車・動かない車</h3><ul><li>動かない車・事故車</li><li>車検が切れた車</li></ul><div class="bay-links"><a class="bay-go" href="haisha.html">廃車の買取を見る</a><a class="bay-apply" href="#apply" data-apply data-kind="廃車・動かない車" data-place="cars">この車で査定を申し込む</a></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="sec bg-pale" id="flow" aria-labelledby="flow-title">
+  <svg class="wv flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kick">売るまでの流れ</p>
+      <h2 class="h2" id="flow-title">お申込みから、お振込みまで。</h2>
+    </div>
+    <div class="steps" data-rv>
+      <div class="track" aria-hidden="true">
+        <span class="track-line"></span>
+        <span class="track-stop" style="left:12.5%"></span><span class="track-stop" style="left:37.5%"></span><span class="track-stop" style="left:62.5%"></span><span class="track-stop" style="left:87.5%"></span>
+        <span class="track-car"><img src="assets/img/kei-side.webp" alt="" width="76" height="40" loading="lazy" decoding="async"></span>
+      </div>
+      <ol class="steps-list">
+        <li class="step" style="--i:0">
+          <div class="step-pic"><svg viewBox="0 0 240 150" aria-hidden="true">
+            <rect y="122" width="240" height="28" fill="#8CCB6E"/>
+            <path d="M70 150 Q72 104 100 101 Q128 104 130 150Z" fill="#FFD21E" stroke="#1F2A44" stroke-width="3"/>
+            <circle cx="100" cy="76" r="20" fill="#F6D3B5" stroke="#1F2A44" stroke-width="3"/>
+            <path d="M80 74 Q80 52 100 52 Q120 52 120 72 Q110 62 98 64 Q88 66 80 74Z" fill="#1F2A44"/>
+            <circle cx="93" cy="80" r="2.4" fill="#1F2A44"/><circle cx="106" cy="80" r="2.4" fill="#1F2A44"/>
+            <path d="M95 88 Q100 92 105 88" fill="none" stroke="#1F2A44" stroke-width="2.2" stroke-linecap="round"/>
+            <rect x="116" y="64" width="13" height="25" rx="3" fill="#1F2A44" transform="rotate(12 122 76)"/>
+            <path d="M138 64 Q145 75 138 86" fill="none" stroke="#E2574C" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M147 58 Q157 75 147 92" fill="none" stroke="#E2574C" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M172 60 L162 76 L182 64" fill="#FFFFFF" stroke="#1F2A44" stroke-width="3" stroke-linejoin="round"/>
+            <ellipse cx="192" cy="44" rx="38" ry="24" fill="#FFFFFF" stroke="#1F2A44" stroke-width="3"/>
+            <text x="192" y="50" text-anchor="middle" class="svt">約1分</text>
+          </svg></div>
+          <div class="step-body"><h3><span class="step-no">1</span>お申込み</h3><p>フォームかお電話で、約1分。伺う日時は、当社からお電話で決めます。</p></div>
+        </li>
+        <li class="step" style="--i:1">
+          <div class="step-pic"><svg viewBox="0 0 240 150" aria-hidden="true">
+            <rect y="122" width="240" height="28" fill="#8CCB6E"/>
+            <rect x="22" y="70" width="70" height="54" fill="#FFFFFF" stroke="#1F2A44" stroke-width="3"/>
+            <path d="M14 74 L57 40 L100 74Z" fill="#E2574C" stroke="#1F2A44" stroke-width="3" stroke-linejoin="round"/>
+            <rect x="48" y="94" width="18" height="30" fill="#C98B4E" stroke="#1F2A44" stroke-width="2.5"/>
+            <rect x="28" y="80" width="14" height="12" fill="#BFE3F4" stroke="#1F2A44" stroke-width="2"/><rect x="72" y="80" width="14" height="12" fill="#BFE3F4" stroke="#1F2A44" stroke-width="2"/>
+            <path d="M108 124 v-14 l10 -16 h44 l14 16 h12 v14z" fill="#BFE3F4" stroke="#1F2A44" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M123 108 l7 -11 h14 v11z M150 97 h11 l9 11 h-20z" fill="#FFFFFF" stroke="#1F2A44" stroke-width="2"/>
+            <circle cx="127" cy="125" r="9" fill="#FFFFFF" stroke="#1F2A44" stroke-width="3"/><circle cx="174" cy="125" r="9" fill="#FFFFFF" stroke="#1F2A44" stroke-width="3"/>
+            <g transform="rotate(6 202 46)">
+              <rect x="181" y="16" width="44" height="58" rx="4" fill="#FFFFFF" stroke="#1F2A44" stroke-width="3"/>
+              <rect x="195" y="11" width="16" height="9" rx="2" fill="#C98B4E" stroke="#1F2A44" stroke-width="2.5"/>
+              <path d="M189 34h28M189 44h22M189 54h26" stroke="#CFE0EA" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="213" cy="63" r="7.5" fill="none" stroke="#D23A2E" stroke-width="2.5"/>
+            </g>
+            <text x="128" y="36" text-anchor="middle" class="svt">30分ほど</text>
+          </svg></div>
+          <div class="step-body"><h3><span class="step-no">2</span>ご自宅で査定</h3><p>立ち会いは30分ほど。金額と内訳を、その場で書面でお渡しします。</p></div>
+        </li>
+        <li class="step" style="--i:2">
+          <div class="step-pic"><svg viewBox="0 0 240 150" aria-hidden="true">
+            <rect y="112" width="240" height="38" fill="#C98B4E" stroke="#1F2A44" stroke-width="3"/>
+            <g transform="rotate(-8 90 72)"><rect x="48" y="36" width="82" height="72" rx="4" fill="#FFFFFF" stroke="#1F2A44" stroke-width="3"/><text x="78" y="60" text-anchor="middle" class="svt2">車検証</text><path d="M60 74h58M60 86h44M60 97h50" stroke="#CFE0EA" stroke-width="4" stroke-linecap="round"/></g>
+            <g transform="rotate(5 142 82)"><rect x="104" y="46" width="76" height="68" rx="4" fill="#FFFFFF" stroke="#1F2A44" stroke-width="3"/><path d="M116 62h52M116 74h40M116 86h48" stroke="#CFE0EA" stroke-width="4" stroke-linecap="round"/><circle cx="164" cy="99" r="8" fill="none" stroke="#D23A2E" stroke-width="2.5"/></g>
+            <rect x="196" y="58" width="16" height="38" rx="7" fill="#C98B4E" stroke="#1F2A44" stroke-width="3"/>
+            <rect x="192" y="92" width="24" height="10" rx="3" fill="#D23A2E" stroke="#1F2A44" stroke-width="2.5"/>
+            <text x="120" y="26" text-anchor="middle" class="svt">手続きは当社で</text>
+          </svg></div>
+          <div class="step-body"><h3><span class="step-no">3</span>ご契約・お引き取り</h3><p>車検証などの書類をご用意ください。名義変更や廃車の手続きは、当社が行います。</p></div>
+        </li>
+        <li class="step" style="--i:3">
+          <div class="step-pic"><svg viewBox="0 0 240 150" aria-hidden="true">
+            <rect y="122" width="240" height="28" fill="#8CCB6E"/>
+            <rect x="36" y="44" width="84" height="72" rx="6" fill="#8CCB6E" stroke="#1F2A44" stroke-width="3"/>
+            <rect x="49" y="58" width="58" height="24" rx="3" fill="#FFFFFF" stroke="#1F2A44" stroke-width="2"/>
+            <text x="78" y="75" text-anchor="middle" class="svt2">通帳</text>
+            <rect x="132" y="66" width="80" height="54" rx="4" fill="#FFFFFF" stroke="#1F2A44" stroke-width="3"/>
+            <path d="M132 68 L172 96 L212 68" fill="none" stroke="#1F2A44" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="188" cy="50" r="18" fill="#FFD21E" stroke="#1F2A44" stroke-width="3"/>
+            <text x="188" y="56" text-anchor="middle" class="svt2" font-size="17">¥</text>
+            <path d="M216 22v12M210 28h12M156 26v8M152 30h8" stroke="#E2574C" stroke-width="3" stroke-linecap="round"/>
+            <text x="80" y="30" text-anchor="middle" class="svt">3営業日以内</text>
+          </svg></div>
+          <div class="step-body"><h3><span class="step-no">4</span>お振込み</h3><p>お車と書類がそろった日から、3営業日以内（土日祝・年末年始を除く）。</p></div>
+        </li>
+      </ol>
+    </div>
+    <p class="note flow-note">ご用意いただく書類は、<a href="#faq-docs">よくある質問</a>にあります。</p>
+  </div>
+</section>
+
+<section class="sec bg-paper" id="shop" aria-labelledby="shop-title">
+  <svg class="wv" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap shop-grid">
-    <div class="shop-copy">
+    <div>
       <p class="kick">ご自宅に伺うのは</p>
-      <h2 id="shop-title">厚木と相模原にお店がある、地元の会社です。</h2>
+      <h2 class="h2" id="shop-title">厚木と相模原にお店がある、地元の会社です。</h2>
       <p class="since"><b>2009</b><span>年4月に、バルスリサイクルとして始めた会社です。</span></p>
       <p class="shop-say">車を売るのは、何年かに一度のこと。分からないことは、何度でも聞いてください。</p>
-      <ul class="stores">
-        <li><b>厚木本店（本社）</b><span>〒243-0806 神奈川県厚木市<span class="nw">下依知2-15-12</span></span><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E5%8E%9A%E6%9C%A8%E5%B8%82%E4%B8%8B%E4%BE%9D%E7%9F%A52-15-12" target="_blank" rel="noopener">地図を開く</a></li>
-        <li><b>相模原店</b><span>〒252-0244 神奈川県相模原市中央区<span class="nw">田名1870-1</span></span><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E7%9B%B8%E6%A8%A1%E5%8E%9F%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E7%94%B0%E5%90%8D1870-1" target="_blank" rel="noopener">地図を開く</a></li>
+      <ul class="signs" data-live>
+        <li class="sign" style="--i:0"><div class="sign-in"><b>厚木本店（本社）</b><span>〒243-0806<br>神奈川県厚木市<span class="nw">下依知2-15-12</span></span><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E5%8E%9A%E6%9C%A8%E5%B8%82%E4%B8%8B%E4%BE%9D%E7%9F%A52-15-12" target="_blank" rel="noopener">地図を開く</a></div></li>
+        <li class="sign" style="--i:1"><div class="sign-in"><b>相模原店</b><span>〒252-0244<br>神奈川県相模原市中央区<span class="nw">田名1870-1</span></span><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E7%9B%B8%E6%A8%A1%E5%8E%9F%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E7%94%B0%E5%90%8D1870-1" target="_blank" rel="noopener">地図を開く</a></div></li>
       </ul>
-      <p class="note">ご高齢の方には、ご家族の同席をおすすめしています。</p>
+      <p class="note shop-note">ご高齢の方には、ご家族の同席をおすすめしています。</p>
     </div>
 
     <section class="area-box" id="area" aria-labelledby="area-title">
       <h3 id="area-title">神奈川県の33市町村、どこでも伺います</h3>
       <p class="area-sub">県外の方も、お電話でご相談ください。</p>
-      <figure class="kmap">
+      <figure class="kmap" data-rv data-live>
         <svg viewBox="40 22 340 250" role="img" aria-labelledby="kmap-t">
           <title id="kmap-t">神奈川県の地図。厚木本店と相模原店は、県のまん中の相模原・県央にあります。</title>
           <g class="km-land">
-            <path class="km-home" d="M55 100L60 55L105 38L150 35L215 50L240 92L252 125L258 148L215 140L140 150L62 150Z"/>
-            <path d="M240 92L262 55L300 40L345 52L368 78L360 120L355 170L305 165L272 172L258 148L252 125Z"/>
-            <path d="M140 150L215 140L258 148L272 172L272 191L250 193L215 198L180 203L165 208L155 180Z"/>
-            <path d="M272 172L305 165L355 170L360 200L345 250L322 262L305 232L298 200L285 188L272 191Z"/>
-            <path d="M62 150L140 150L155 180L165 208L150 212L140 240L122 258L100 240L78 200Z"/>
+            <path class="r-home" d="M55 100L60 55L105 38L150 35L215 50L240 92L252 125L258 148L215 140L140 150L62 150Z"/>
+            <path class="r-a" d="M240 92L262 55L300 40L345 52L368 78L360 120L355 170L305 165L272 172L258 148L252 125Z"/>
+            <path class="r-b" d="M140 150L215 140L258 148L272 172L272 191L250 193L215 198L180 203L165 208L155 180Z"/>
+            <path class="r-b" d="M272 172L305 165L355 170L360 200L345 250L322 262L305 232L298 200L285 188L272 191Z"/>
+            <path class="r-a" d="M62 150L140 150L155 180L165 208L150 212L140 240L122 258L100 240L78 200Z"/>
+          </g>
+          <g aria-hidden="true">
+            <g transform="translate(82 82)"><g class="mh-in" style="--i:0"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(120 62)"><g class="mh-in" style="--i:1"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(241 140)"><g class="mh-in" style="--i:2"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(290 74)"><g class="mh-in" style="--i:3"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(338 84)"><g class="mh-in" style="--i:4"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(302 150)"><g class="mh-in" style="--i:5"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(176 168)"><g class="mh-in" style="--i:6"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(246 172)"><g class="mh-in" style="--i:7"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(342 186)"><g class="mh-in" style="--i:8"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(320 242)"><g class="mh-in" style="--i:9"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(96 174)"><g class="mh-in" style="--i:10"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+            <g transform="translate(128 230)"><g class="mh-in" style="--i:11"><rect x="-6" y="-8" width="12" height="8" fill="#FFFFFF" stroke="#1F2A44" stroke-width="1.2"/><path d="M-8.5 -8 L0 -15 L8.5 -8Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.2" stroke-linejoin="round"/></g></g>
           </g>
           <g class="km-lab" aria-hidden="true">
-            <text x="112" y="110">相模原・県央</text>
-            <text x="306" y="110">横浜・川崎</text>
-            <text x="210" y="178">湘南</text>
-            <text x="329" y="206">横須賀<tspan x="329" dy="1.25em">三浦</tspan></text>
-            <text x="110" y="200">県西</text>
-            <text class="km-sea" x="222" y="242">相模湾</text>
+            <text x="108" y="122">相模原・県央</text>
+            <text x="312" y="118">横浜・川崎</text>
+            <text x="212" y="181">湘南</text>
+            <text x="326" y="208">横須賀<tspan x="326" dy="1.25em">三浦</tspan></text>
+            <text x="114" y="204">県西</text>
+            <text class="km-sea" x="222" y="244">相模湾</text>
           </g>
-          <g class="km-pin" aria-hidden="true">
-            <circle cx="192" cy="86" r="5"/><text x="201" y="84">相模原店</text>
-            <circle cx="199" cy="120" r="5"/><text x="208" y="124">厚木本店</text>
+          <g aria-hidden="true">
+            <g class="pin1" transform="translate(192 86)"><ellipse class="pin-ring" cx="0" cy="0" rx="7" ry="3"/><g class="pin-b"><path d="M0 0 C -7 -8 -9 -11 -9 -15 A 9 9 0 1 1 9 -15 C 9 -11 7 -8 0 0 Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.5"/><circle cx="0" cy="-15" r="3.6" fill="#FFFFFF"/></g><text class="pin-t" x="12" y="-14">相模原店</text></g>
+            <g class="pin2" transform="translate(199 120)"><ellipse class="pin-ring" cx="0" cy="0" rx="7" ry="3"/><g class="pin-b"><path d="M0 0 C -7 -8 -9 -11 -9 -15 A 9 9 0 1 1 9 -15 C 9 -11 7 -8 0 0 Z" fill="#E2574C" stroke="#1F2A44" stroke-width="1.5"/><circle cx="0" cy="-15" r="3.6" fill="#FFFFFF"/></g><text class="pin-t" x="12" y="-14">厚木本店</text></g>
           </g>
         </svg>
         <figcaption>地図は目安です</figcaption>
@@ -157,7 +554,7 @@
       <details class="area-list">
         <summary>伺える市町村の一覧を見る（33）</summary>
         <div class="areas">
-          <div class="ar ar-home"><h4>相模原・県央<small>お店の近く</small></h4><p>相模原市・厚木市・大和市・海老名市・座間市・綾瀬市・愛川町・清川村</p></div>
+          <div class="ar"><h4>相模原・県央<small>お店の近く</small></h4><p>相模原市・厚木市・大和市・海老名市・座間市・綾瀬市・愛川町・清川村</p></div>
           <div class="ar"><h4>横浜・川崎</h4><p>横浜市・川崎市</p></div>
           <div class="ar"><h4>湘南</h4><p>平塚市・藤沢市・茅ヶ崎市・秦野市・伊勢原市・寒川町・大磯町・二宮町</p></div>
           <div class="ar"><h4>横須賀・三浦</h4><p>横須賀市・鎌倉市・逗子市・三浦市・葉山町</p></div>
@@ -167,226 +564,77 @@
     </section>
   </div>
 </section>
-
-<section class="promise sec s-mint" id="promise" aria-labelledby="promise-title">
-  <div class="wrap">
-    <p class="kick">ノリカエ.comのお約束</p>
-    <h2 id="promise-title">売ったあとで困らないための、6つのお約束。</h2>
-    <p class="sub">条件や例外も、先にお伝えします。</p>
-
-    <div class="dgs">
-      <article class="dg" id="p-gen">
-        <p class="dg-tag">ご契約のあと</p>
-        <h3 class="dg-v"><span class="mk">減額なし</span></h3>
-        <p>当社の見落としで、あとから金額を下げることはしません。</p>
-        <p class="ex"><b>例外</b>修復歴（骨格まで直した事故の跡）・水没・メーターの巻き戻しを伝えていなかったときと、お引き渡しまでの事故・故障だけ。</p>
-      </article>
-      <article class="dg" id="p-can">
-        <p class="dg-tag">お引き渡しの前なら</p>
-        <h3 class="dg-v"><span class="mk">取り消し無料</span></h3>
-        <p>契約のあとも、お引き渡しの前なら無料でやめられます。</p>
-        <p class="ex"><b>例外</b>その日に引き取るときは、引き渡しのあとは取り消せません。契約の前にお伝えします。</p>
-      </article>
-      <article class="dg" id="d7">
-        <p class="dg-tag">お伝えした金額</p>
-        <h3 class="dg-v"><span class="vh">7日間そのまま</span><span class="mk" aria-hidden="true"><span class="dg-num" data-final="7">7</span>日間</span><small aria-hidden="true">そのまま</small></h3>
-        <p>その場で決めなくて大丈夫。ご家族と相談してください。</p>
-        <p class="ex"><b>条件</b>事故や故障がなく、走った距離の増えが500km以内なら、相場が下がっても同じ金額。</p>
-      </article>
-      <article class="dg" id="d1">
-        <p class="dg-tag">ご連絡・ご訪問</p>
-        <h3 class="dg-v"><span class="vh">伺うのは1社だけ</span><span class="mk" aria-hidden="true"><span class="dg-num" data-final="1">1</span>社</span><small aria-hidden="true">だけ</small></h3>
-        <p>一括査定ではありません。お断りのあと、営業の電話もしません。</p>
-      </article>
-      <article class="dg" id="d0">
-        <p class="dg-tag">費用（神奈川県内）</p>
-        <h3 class="dg-v"><span class="vh">費用は0円</span><span class="mk" aria-hidden="true"><span class="dg-num" data-final="0">0</span>円</span></h3>
-        <p>出張・査定・引き取り・手続きまで。お断りでも0円で、買取額から引くこともしません。</p>
-        <p class="ex"><b>例外</b>印鑑証明書など、役所で取る書類の手数料だけはご負担です。</p>
-      </article>
-      <article class="dg" id="d3">
-        <p class="dg-tag">お振込みまで</p>
-        <h3 class="dg-v"><span class="vh">3営業日以内</span><span class="mk" aria-hidden="true"><span class="dg-num" data-final="3">3</span>営業日</span><small aria-hidden="true">以内</small></h3>
-        <p>お車と書類がそろった日から（土日祝・年末年始を除く）。</p>
-        <p class="ex"><b>例外</b>ローンが残る車は、ローン会社の手続きのあと。</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<figure class="photo-band">
-  <picture>
-    <source type="image/avif" srcset="assets/hero/hero-09-960.avif 960w, assets/hero/hero-09-1440.avif 1440w" sizes="100vw">
-    <img src="assets/hero/hero-09-1440.webp" srcset="assets/hero/hero-09-960.webp 960w, assets/hero/hero-09-1440.webp 1440w" sizes="100vw" width="1440" height="1080" alt="木の板の壁の前に止まっている、白い軽トラック" loading="lazy" decoding="async">
-  </picture>
-  <figcaption><b>ご自宅の前で、30分ほど。</b><span>金額は、その場でお伝えします。</span><small>写真はイメージです</small></figcaption>
-</figure>
-
-<section class="diff sec" id="diff" aria-labelledby="diff-title">
-  <div class="wrap">
-    <div class="diff-top">
-      <div class="diff-head">
-        <p class="kick">一括査定・下取りとのちがい</p>
-        <h2 id="diff-title">かかってくる電話は、当社からだけ。</h2>
-        <p class="sub">何社もの電話を受けたくない方、家で決めたい方へ。</p>
-      </div>
-      <div class="calls" aria-hidden="true">
-        <figure class="call call-us">
-          <p class="call-who">ノリカエ.com</p>
-          <div class="call-scr">
-            <p class="call-h"><span>着信</span><i>1</i></p>
-            <ul><li class="ok"><b>ノリカエ.com</b></li></ul>
-          </div>
-        </figure>
-        <figure class="call call-many">
-          <p class="call-who">一括査定<small>（多くの場合）</small></p>
-          <div class="call-scr">
-            <p class="call-h"><span>着信</span><i>5</i></p>
-            <ul><li><b>知らない番号</b></li><li><b>知らない番号</b></li><li><b>知らない番号</b></li><li><b>知らない番号</b></li><li><b>知らない番号</b></li></ul>
-          </div>
-        </figure>
-      </div>
-    </div>
-    <div class="cmp-wrap">
-      <table class="cmp">
-        <thead><tr><th scope="col"><span class="vh">くらべること</span></th><th scope="col" class="us">ノリカエ.com</th><th scope="col">一括査定サイト</th><th scope="col">ディーラーの下取り</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">連絡と訪問</th><td class="us">当社だけ</td><td>多くは、複数の会社から連絡が来る</td><td>そのお店だけ</td></tr>
-          <tr><th scope="row">金額</th><td class="us">その場で、内訳つきの書面で</td><td>各社の金額を待って、くらべる</td><td>値引きと合わさり、見えにくいことも</td></tr>
-          <tr><th scope="row">古い車・動かない車</th><td class="us">買い取ります。引き取りも0円</td><td>扱わない会社もある</td><td>処分の費用がかかることも</td></tr>
-        </tbody>
-      </table>
-      <p class="diff-tip"><b>下取りの見積書があれば、査定のときにお見せください。</b></p>
-      <p class="note">一括査定と下取りは、多くの場合の例です。</p>
-    </div>
-  </div>
-</section>
-
 <aside class="band" aria-label="お申込みのご案内">
+  <svg class="wv flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
+  <div class="band-clip" data-live aria-hidden="true"><div class="band-road"></div><div class="band-kei" style="animation-delay:-7s"><img src="assets/img/kei-side.webp" alt="" width="96" height="51" loading="lazy" decoding="async"></div></div>
   <div class="wrap band-in">
-    <p><b>金額を聞くだけでも、大丈夫です。</b>約1分・お名前と電話番号だけ</p>
-    <div class="band-acts">
-      <a class="btn btn-go" href="#apply" data-apply data-place="band-1">無料で査定を申し込む</a>
-      <a class="band-tel" href="tel:0120979574" data-track="tel" data-place="band-1"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
+    <div class="band-photo">
+      <img src="assets/hero/hero-06-640.webp" alt="車の鍵を手渡す手" width="112" height="112" loading="lazy" decoding="async">
+      <p class="band-t"><b>売るかどうかは、金額を聞いてから。</b>査定だけでも、お断りでも、費用はかかりません。<small>写真はイメージです</small></p>
     </div>
-  </div>
-</aside>
-
-<section class="cars sec" id="cars" aria-labelledby="cars-title">
-  <div class="wrap">
-    <p class="kick">買い取る車</p>
-    <h2 id="cars-title">古い車も、動かない車も、買い取ります。</h2>
-    <p class="sub">乗用車から4トントラックまで。車検切れの車は、積載車で伺います。</p>
-    <div class="when">
-      <p class="when-t" id="when-t">こんなときも、ご相談ください</p>
-      <ul class="when-list" aria-labelledby="when-t"><li>車検のハガキが来た</li><li>免許を返した</li><li>乗っていない車がある</li><li>親の車を任された</li><li>動かない車がある</li></ul>
-    </div>
-    <div class="bays">
-      <article class="bay">
-        <picture class="bay-ph"><source type="image/avif" srcset="assets/hero/hero-02-640.avif"><img src="assets/hero/hero-02-640.webp" width="640" height="480" alt="" loading="lazy" decoding="async" style="--pos:88% 72%"></picture>
-        <h3>乗用車・ミニバン</h3>
-        <ul><li>ローンが残っている車</li><li>10年・10万kmをこえた車</li></ul>
-        <a class="bay-go" href="usedcar.html">中古車の買取を見る</a>
-      </article>
-      <article class="bay">
-        <picture class="bay-ph"><source type="image/avif" srcset="assets/hero/hero-07-640.avif"><img src="assets/hero/hero-07-640.webp" width="640" height="480" alt="" loading="lazy" decoding="async" style="--pos:40% 82%"></picture>
-        <h3>軽自動車・軽トラ</h3>
-        <ul><li>軽トラック・軽バン</li><li>黒ナンバーの軽バンも</li></ul>
-        <a class="bay-go" href="truck.html">軽トラの買取を見る</a>
-      </article>
-      <article class="bay">
-        <picture class="bay-ph"><source type="image/avif" srcset="assets/hero/hero-09-640.avif"><img src="assets/hero/hero-09-640.webp" width="640" height="480" alt="" loading="lazy" decoding="async" style="--pos:68% 86%"></picture>
-        <h3>トラック・会社の車</h3>
-        <ul><li>2トン・4トントラック</li><li>会社の車を、まとめて</li></ul>
-        <a class="bay-go" href="truck.html">トラックの買取を見る</a>
-      </article>
-      <article class="bay">
-        <picture class="bay-ph"><source type="image/avif" srcset="assets/hero/hero-05-640.avif"><img src="assets/hero/hero-05-640.webp" width="640" height="480" alt="" loading="lazy" decoding="async" style="--pos:35% 72%"></picture>
-        <h3>廃車・動かない車</h3>
-        <ul><li>動かない車・事故車</li><li>車検が切れた車</li></ul>
-        <a class="bay-go" href="haisha.html">廃車の買取を見る</a>
-      </article>
-    </div>
-    <p class="family"><b>ご家族の車も。</b>運転をやめた親の車、亡くなった方の車も、ご家族からご相談ください。<a href="#faq-family">くわしく見る</a></p>
-  </div>
-</section>
-
-<section class="flow sec s-mint" id="flow" aria-labelledby="flow-title">
-  <div class="wrap">
-    <p class="kick">売るまでの流れ</p>
-    <h2 id="flow-title">お申込みから、お振込みまで。</h2>
-    <ol class="steps">
-      <li class="step"><p class="step-no">1</p><h3>お申込み</h3><p>フォームかお電話で、約1分。伺う日時は、当社からお電話で決めます。</p></li>
-      <li class="step"><p class="step-no">2</p><h3>ご自宅で査定</h3><p>立ち会いは30分ほど。金額と内訳を、その場で書面でお渡しします。</p></li>
-      <li class="step"><p class="step-no">3</p><h3>ご契約・お引き取り</h3><p>車検証などの書類をご用意ください。名義変更や廃車の手続きは、当社が行います。</p></li>
-      <li class="step"><p class="step-no">4</p><h3>お振込み</h3><p>お車と書類がそろった日から、3営業日以内（土日祝・年末年始を除く）。</p></li>
-    </ol>
-    <p class="note">ご用意いただく書類は、<a href="#faq-docs">よくある質問</a>にあります。</p>
-  </div>
-</section>
-
-<aside class="band" aria-label="お申込みのご案内">
-  <div class="wrap band-in">
-    <p><b>売るかどうかは、金額を聞いてから。</b>査定だけでも、お断りでも、費用はかかりません。</p>
     <div class="band-acts">
       <a class="btn btn-go" href="#apply" data-apply data-place="band-2">無料で査定を申し込む</a>
-      <a class="band-tel" href="tel:0120979574" data-track="tel" data-place="band-2"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
+      <a class="btn btn-tel" href="tel:0120979574" data-place="band-2"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
     </div>
   </div>
 </aside>
 
-<section class="faq sec" id="faq" aria-labelledby="faq-title">
+<section class="sec bg-white" id="faq" aria-labelledby="faq-title">
+  <svg class="wv" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap faq-grid">
-    <div class="faq-head">
+    <div>
       <p class="kick">よくある質問</p>
-      <h2 id="faq-title">ご不安なことに、先にお答えします。</h2>
+      <h2 class="h2" id="faq-title">ご不安なことに、先にお答えします。</h2>
       <p class="sub">ほかにも気になることがあれば、お電話でどうぞ。</p>
     </div>
     <div class="faq-list">
-      <details open><summary>申し込んだら、何社からも電話が来ませんか。</summary><p>来ません。ノリカエ.comは一括査定ではないので、ご連絡するのは当社だけです。お断りのあと、こちらから営業のお電話をすることもありません。</p></details>
-      <details><summary>契約のあとで、金額が下がることはありますか。</summary><p>ありません。査定で当社が見落としたことでは、減額しません。例外は、修復歴（骨格まで直した事故の跡）・水没・メーターの巻き戻しを知っていてお伝えいただけなかったときと、お引き渡しまでに事故や故障があったときだけです。そのときも、理由を書面でお見せします。</p></details>
-      <details><summary>費用はかかりますか。</summary><p>神奈川県内なら、出張・査定・引き取り（積載車を含む）・名義変更・廃車の手続きまで0円です。お断りいただいても費用はかからず、買取額から差し引くこともありません。印鑑証明書など、役所でお取りいただく書類の手数料だけは、お客様のご負担です。</p></details>
-      <details><summary>契約したあとで、やめることはできますか。</summary><p>お車をお引き渡しする前なら、いつでも無料でお取り消しいただけます。お電話一本で大丈夫です。ご契約のその日にお引き取りするときは、お引き渡しのあとは取り消せないことを、ご契約の前にお伝えします。お伝えした金額は7日間そのままなので、その場で決めなくて大丈夫です。</p></details>
-      <details><summary>動かない車や、車検が切れた車も大丈夫ですか。</summary><p>大丈夫です。積載車で引き取りに伺います。費用はかかりません。廃車にすると、自動車税などが戻ることもあります。</p></details>
-      <details id="faq-family"><summary>運転をやめた親の車を、家族が売れますか。</summary><p>はい。車の持ち主がご本人のままでも、ご家族が窓口になって進められます。持ち主ご本人の印鑑登録証明書と実印（軽自動車は認印）をご用意いただき、書類に記入していただきます。</p></details>
+      <details class="qa" open><summary>申し込んだら、何社からも電話が来ませんか。</summary><div class="a"><p>来ません。ノリカエ.comは一括査定ではないので、ご連絡するのは当社だけです。お断りのあと、こちらから営業のお電話をすることもありません。</p></div></details>
+      <details class="qa"><summary>契約のあとで、金額が下がることはありますか。</summary><div class="a"><p>ありません。査定で当社が見落としたことでは、減額しません。例外は、修復歴（骨格まで直した事故の跡）・水没・メーターの巻き戻しを知っていてお伝えいただけなかったときと、お引き渡しまでに事故や故障があったときだけです。そのときも、理由を書面でお見せします。</p></div></details>
+      <details class="qa"><summary>費用はかかりますか。</summary><div class="a"><p>神奈川県内なら、出張・査定・引き取り（積載車を含む）・名義変更・廃車の手続きまで0円です。お断りいただいても費用はかからず、買取額から差し引くこともありません。印鑑証明書など、役所でお取りいただく書類の手数料だけは、お客様のご負担です。</p></div></details>
+      <details class="qa"><summary>契約したあとで、やめることはできますか。</summary><div class="a"><p>お車をお引き渡しする前なら、いつでも無料でお取り消しいただけます。お電話一本で大丈夫です。ご契約のその日にお引き取りするときは、お引き渡しのあとは取り消せないことを、ご契約の前にお伝えします。お伝えした金額は7日間そのままなので、その場で決めなくて大丈夫です。</p></div></details>
+      <details class="qa"><summary>動かない車や、車検が切れた車も大丈夫ですか。</summary><div class="a"><p>大丈夫です。積載車で引き取りに伺います。費用はかかりません。廃車にすると、自動車税などが戻ることもあります。</p></div></details>
+      <details class="qa" id="faq-family"><summary>運転をやめた親の車を、家族が売れますか。</summary><div class="a"><p>はい。車の持ち主がご本人のままでも、ご家族が窓口になって進められます。持ち主ご本人の印鑑登録証明書と実印（軽自動車は認印）をご用意いただき、書類に記入していただきます。</p></div></details>
       <details class="faq-more">
         <summary>ほかの質問も見る（5つ）</summary>
         <div class="faq-list">
-          <details><summary>お金はいつ振り込まれますか。</summary><p>お車と必要な書類がそろった日から、3営業日以内（土日祝・年末年始を除く）にお振込みします。ローンが残っているお車は、ローン会社とのお手続きが済んでからになります。</p></details>
-          <details><summary>ローンが残っている車も売れますか。</summary><p>はい。残っている金額を確かめて、ローン会社とのやり取りもご案内します。買取の金額で残りを精算できることもあります。</p></details>
-          <details id="faq-docs"><summary>売るときに、どんな書類が要りますか。</summary><p>普通自動車は、車検証・自賠責保険証明書・印鑑登録証明書（発行から3か月以内）・実印・リサイクル券・自動車税の納税証明書です。軽自動車は、車検証・自賠責保険証明書・認印・リサイクル券・軽自動車税の納税証明書です。リサイクル券や納税証明書は、なくても大丈夫なことが多いです。譲渡証明書などは、当日こちらでお持ちします。</p></details>
-          <details><summary>名義変更や廃車の手続きは、誰がしますか。</summary><p>当社がすべて行います。手続きが終わったら、書面でお知らせします。</p></details>
-          <details><summary>持ち主が入院中・施設にいる・亡くなっているときは。</summary><p>ご相談ください。入院中や施設にいらっしゃるときは、ご本人に書類へ記入していただく方法をご案内します。亡くなっているときは、相続の書類が必要です。どの書類が要るかを、お電話でご説明します。</p></details>
+          <details class="qa"><summary>お金はいつ振り込まれますか。</summary><div class="a"><p>お車と必要な書類がそろった日から、3営業日以内（土日祝・年末年始を除く）にお振込みします。ローンが残っているお車は、ローン会社とのお手続きが済んでからになります。</p></div></details>
+          <details class="qa"><summary>ローンが残っている車も売れますか。</summary><div class="a"><p>はい。残っている金額を確かめて、ローン会社とのやり取りもご案内します。買取の金額で残りを精算できることもあります。</p></div></details>
+          <details class="qa" id="faq-docs"><summary>売るときに、どんな書類が要りますか。</summary><div class="a"><p>普通自動車は、車検証・自賠責保険証明書・印鑑登録証明書（発行から3か月以内）・実印・リサイクル券・自動車税の納税証明書です。軽自動車は、車検証・自賠責保険証明書・認印・リサイクル券・軽自動車税の納税証明書です。リサイクル券や納税証明書は、なくても大丈夫なことが多いです。譲渡証明書などは、当日こちらでお持ちします。</p></div></details>
+          <details class="qa"><summary>名義変更や廃車の手続きは、誰がしますか。</summary><div class="a"><p>当社がすべて行います。手続きが終わったら、書面でお知らせします。</p></div></details>
+          <details class="qa"><summary>持ち主が入院中・施設にいる・亡くなっているときは。</summary><div class="a"><p>ご相談ください。入院中や施設にいらっしゃるときは、ご本人に書類へ記入していただく方法をご案内します。亡くなっているときは、相続の書類が必要です。どの書類が要るかを、お電話でご説明します。</p></div></details>
         </div>
       </details>
     </div>
   </div>
 </section>
-
-<section class="apply sec s-mint" id="apply" aria-labelledby="apply-title">
+<section class="sec bg-pale" id="apply" aria-labelledby="apply-title">
+  <svg class="wv flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap apply-grid">
     <div class="apply-copy">
       <p class="kick">無料査定のお申込み</p>
-      <h2 id="apply-title">まずは、金額を聞いてみてください。</h2>
+      <h2 class="h2" id="apply-title">まずは、金額を聞いてみてください。</h2>
       <p>売るかどうかは、金額を聞いてから。お断りでも、費用はかかりません。</p>
-      <ul class="apply-points"><li>分かるところだけ選んで、約1分</li><li>入れるのは、お名前と電話番号だけ</li><li>ご連絡は当社1社だけ</li></ul>
+      <ul class="apply-points"><li><span class="chk" aria-hidden="true"></span>分かるところだけ選んで、約1分</li><li><span class="chk" aria-hidden="true"></span>入れるのは、お名前と電話番号だけ</li><li><span class="chk" aria-hidden="true"></span>ご連絡は当社1社だけ</li></ul>
       <div class="apply-tel">
         <p>お電話でも受け付けています</p>
-        <a class="btn btn-tel" href="tel:0120979574" data-track="tel" data-place="apply"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
+        <a class="btn btn-tel" href="tel:0120979574" data-place="apply"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
         <p class="act-note">通話無料・毎日8:00〜23:00<span class="night" hidden>ただいま受付時間外です（フォームは24時間）</span></p>
       </div>
-      <a class="btn btn-line" href="#line" data-line data-place="apply">LINEで写真を送って相談</a>
+      <a class="btn btn-line" href="#line" data-line data-place="apply"><svg class="ic" aria-hidden="true"><use href="#i-line"/></svg>LINEで写真を送って相談</a>
     </div>
-    <div class="wz-slot" id="wz-slot">
+
+    <div class="wz-card wz-slot" id="wz-slot">
       <form class="wz" id="wizard" name="satei" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" data-demo="1" novalidate>
         <input type="hidden" name="form-name" value="satei">
         <input type="hidden" name="model" value="">
         <input type="hidden" name="souba" value="">
         <input type="hidden" name="from" value="">
         <p hidden><label>この欄は空のままにしてください<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-
-        <div class="wz-prog" aria-hidden="true"><i id="wz-bar"></i></div>
-        <p class="wz-count" id="wz-count" aria-live="polite"></p>
+        <div class="wz-road" aria-hidden="true">
+          <span class="wz-car"><img src="assets/img/kei-side.webp" alt="" width="80" height="43" loading="lazy" decoding="async"></span>
+          <svg class="wz-house" viewBox="0 0 54 54"><rect x="9" y="24" width="36" height="28" fill="#FFFFFF" stroke="#1F2A44" stroke-width="2.5"/><path d="M4 26 L27 6 L50 26Z" fill="#E2574C" stroke="#1F2A44" stroke-width="2.5" stroke-linejoin="round"/><rect x="22" y="34" width="10" height="18" fill="#C98B4E" stroke="#1F2A44" stroke-width="2"/></svg>
+        </div>
+        <p class="wz-count" aria-live="polite"></p>
 
         <fieldset class="wz-step" data-key="kind">
           <legend>どんな車ですか？</legend>
@@ -421,6 +669,7 @@
 
         <fieldset class="wz-step wz-contact" data-key="contact">
           <legend>ご連絡先を教えてください</legend>
+          <p class="wz-from" hidden></p>
           <div class="f"><label for="w-name">お名前<span class="req">必須</span><small class="f-hint">名字だけでも大丈夫です</small></label><input id="w-name" name="name" type="text" autocomplete="name" placeholder="例：相模"></div>
           <div class="f"><label for="w-tel">お電話番号<span class="req">必須</span></label><input id="w-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="例：090-1234-5678"></div>
           <div class="f"><label for="w-zip">お車のある場所の郵便番号</label><input id="w-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="8" placeholder="例：243-0806" data-zip-out="w-zip-out"><p class="zip-out" id="w-zip-out" aria-live="polite"></p></div>
@@ -443,10 +692,13 @@
   </div>
 </section>
 
-<section class="company sec" id="company" aria-labelledby="company-title">
+<section class="sec bg-paper" id="company" aria-labelledby="company-title">
+  <svg class="wv" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap">
-    <p class="kick">運営会社</p>
-    <h2 id="company-title">運営会社のこと</h2>
+    <div class="sec-head">
+      <p class="kick">運営会社</p>
+      <h2 class="h2" id="company-title">運営会社のこと</h2>
+    </div>
     <dl class="co">
       <div><dt>サービス名</dt><dd>ノリカエ.com</dd></div>
       <div><dt>運営会社</dt><dd>株式会社おてつだい.com（屋号：バルスリサイクル）</dd></div>
@@ -460,7 +712,7 @@
       <div><dt>古物商許可</dt><dd>神奈川県公安委員会 第452740019822号</dd></div>
       <div><dt>産業廃棄物収集運搬業</dt><dd>神奈川県 10402160758号／東京都 第13-00-160758号</dd></div>
       <div><dt>自動車リサイクル法</dt><dd>引取業者の登録番号<span class="tmp">確認中</span></dd></div>
-      <div><dt>公式サイト</dt><dd><a href="https://risaikuru-otetudai.com/" rel="noopener">risaikuru-otetudai.com</a></dd></div>
+      <div><dt>公式サイト</dt><dd><a href="https://risaikuru-otetudai.com/" target="_blank" rel="noopener">risaikuru-otetudai.com</a></dd></div>
     </dl>
   </div>
 </section>
@@ -468,22 +720,23 @@
 </main>
 
 <footer class="foot">
+  <svg class="wv flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap foot-cta">
     <p class="foot-cta-t">車のご相談は、お気軽に</p>
-    <a class="foot-tel" href="tel:0120979574" data-track="tel" data-place="footer"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
+    <a class="foot-tel" href="tel:0120979574" data-place="footer"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg>0120-979-574</a>
     <p class="foot-hours">通話無料・毎日8:00〜23:00</p>
     <a class="btn btn-go" href="#apply" data-apply data-place="footer">無料で査定を申し込む</a>
   </div>
   <div class="wrap foot-in">
-    <span class="logo" aria-hidden="true"><i></i><i></i><span class="logo-t">ノリカエ<small>.com</small></span></span>
+    <p class="foot-logo"><img src="assets/icon.svg" alt="" width="40" height="40">ノリカエ.com</p>
     <p>神奈川県の出張車買取　運営：株式会社おてつだい.com<br>〒243-0806 神奈川県厚木市<span class="nw">下依知2-15-12</span><br>古物商許可 神奈川県公安委員会 第452740019822号</p>
-    <p class="foot-c">© 2026 ノリカエ.com（株式会社おてつだい.com）</p>
     <nav class="foot-nav" aria-label="ページの一覧"><a href="usedcar.html">中古車の買取</a><a href="haisha.html">廃車・古い車の買取</a><a href="truck.html">商用車・トラックの買取</a><a href="privacy.html">個人情報の取り扱い</a></nav>
+    <p class="foot-c">© 2026 ノリカエ.com（株式会社おてつだい.com）</p>
   </div>
 </footer>
 
 <nav class="dock" aria-label="ご相談">
-  <a class="dock-tel" href="tel:0120979574" data-track="tel" data-place="dock"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span><b>電話する</b><small class="dock-hours">通話無料・8〜23時</small></span></a>
+  <a class="dock-tel" href="tel:0120979574" data-place="dock"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span><b>電話する</b><small class="dock-hours">通話無料・8〜23時</small></span></a>
   <a class="dock-line" href="#line" data-line data-place="dock"><span><b>LINE</b><small>写真で相談</small></span></a>
   <a class="dock-go" href="#apply" data-apply data-place="dock"><span><b>無料査定</b><small>約1分</small></span></a>
 </nav>
@@ -495,7 +748,7 @@
 
 <details class="dev-note">
   <summary>確認用</summary>
-  <div class="dev-body"><p>会社の情報は公式サイトのものです。自動車リサイクル法の登録番号だけ確認中です。フォームは確認用で、実際には送信されません。相場の金額は<b>見本</b>です。最初の画面の写真は無料の素材写真（イメージ）です。</p></div>
+  <div class="dev-body"><p>会社の情報は公式サイトのものです。自動車リサイクル法の登録番号だけ確認中です。フォームは確認用で、実際には送信されません。相場の金額は<b>見本</b>です。写真は無料の素材写真（イメージ）です。</p></div>
 </details>
 
 <script src="assets/phrase.js"></script>

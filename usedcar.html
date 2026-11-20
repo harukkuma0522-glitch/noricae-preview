@@ -15,32 +15,44 @@
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Yomogi&family=Zen+Maru+Gothic:wght@500;700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/page.css">
 <script>(function(){var d=document.documentElement,c=navigator.connection;d.lang=d.lang||'ja';d.classList.add('js','no-line');if(c&&c.saveData)d.classList.add('save');if(matchMedia('(prefers-reduced-motion: no-preference)').matches&&!(c&&c.saveData))d.classList.add('motion')})();</script>
 </head>
+<!-- 第13版「家の前で」（2026-11-19） -->
 <body data-kind="乗用車・ミニバン">
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" fill="currentColor"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="kasure" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.4 0 0 0 1.9" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+  </defs>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+  <symbol id="i-stamp" viewBox="0 0 100 100"><g filter="url(#kasure)"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width="2"/><text x="50" y="46" text-anchor="middle" class="st">約</text><text x="50" y="76" text-anchor="middle" class="st">束</text></g></symbol>
+</svg>
 
 <a class="skip" href="#main">本文へ移動</a>
 
 <header class="bar">
-  <a class="bar-logo" href="index.html" aria-label="ノリカエ.com トップページへ">
-    <span class="logo" aria-hidden="true"><i></i><i></i><span class="logo-t">ノリカエ<small>.com</small></span></span>
-    <span class="bar-by"><b>神奈川の出張車買取</b><small>運営：バルスリサイクル</small></span>
-  </a>
-  <nav class="bar-nav" aria-label="サイトの案内">
-    <a href="usedcar.html" aria-current="page">中古車</a><a href="haisha.html">廃車</a><a href="truck.html">商用車</a><a href="index.html#price">相場</a><a href="index.html#flow">流れ</a><a href="index.html#faq">質問</a>
-  </nav>
-  <a class="bar-tel" href="tel:0120979574" data-track="tel"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span><span class="tel-no">0120-979-574</span><small>通話無料・毎日8:00〜23:00</small></span></a>
-  <a class="btn btn-go bar-cta" href="index.html#apply" data-apply>無料査定</a>
-  <a class="bar-call" href="tel:0120979574" data-track="tel"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span>電話</span></a>
-  <details class="bar-menu">
-    <summary>メニュー</summary>
-    <nav class="bar-panel" aria-label="メニュー"><a href="index.html">トップ</a><a href="index.html#price">相場を見る</a><a href="index.html#shop">伺う会社とお店</a><a href="usedcar.html" aria-current="page">中古車の買取</a><a href="haisha.html">廃車・古い車の買取</a><a href="truck.html">商用車・トラックの買取</a><a href="index.html#flow">売るまでの流れ</a><a href="index.html#area">伺える地域</a><a href="index.html#faq">よくある質問</a><a href="index.html#company">運営会社</a></nav>
-  </details>
+  <div class="wrap bar-in">
+    <a class="logo" href="index.html" aria-label="ノリカエ.com トップページへ">
+      <img src="assets/icon.svg" alt="" width="44" height="44">
+      <span class="logo-t"><b>ノリカエ<small>.com</small></b><span>神奈川の出張車買取｜運営：バルスリサイクル</span></span>
+    </a>
+    <nav class="nav" aria-label="サイトの案内">
+      <a href="usedcar.html" aria-current="page">中古車</a><a href="haisha.html">廃車</a><a href="truck.html">商用車</a><a href="index.html#price">相場</a><a href="index.html#flow">流れ</a><a href="index.html#faq">質問</a>
+    </nav>
+    <a class="bar-tel" href="tel:0120979574" data-place="header"><b><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg>0120-979-574</b><small>通話無料・毎日8:00〜23:00</small></a>
+    <a class="btn btn-go bar-go" href="index.html#apply" data-apply data-place="header">無料査定</a>
+    <details class="bar-menu">
+      <summary>メニュー</summary>
+      <nav class="bar-panel" aria-label="メニュー"><a href="index.html">トップ</a><a href="index.html#price">相場を見る</a><a href="index.html#promise">6つのお約束</a><a href="usedcar.html" aria-current="page">中古車の買取</a><a href="haisha.html">廃車・古い車の買取</a><a href="truck.html">商用車・トラックの買取</a><a href="index.html#flow">売るまでの流れ</a><a href="index.html#shop">伺う会社とお店</a><a href="index.html#area">伺える地域</a><a href="index.html#faq">よくある質問</a><a href="index.html#company">運営会社</a></nav>
+    </details>
+  </div>
 </header>
 
 <main id="main">
@@ -84,7 +96,7 @@
   </div>
 </nav>
 
-<section class="sec" id="check" aria-labelledby="check-title">
+<section class="sec bg-white" id="check" aria-labelledby="check-title">
   <div class="wrap">
     <p class="kick">査定で見るところ</p>
     <h2 id="check-title">査定では、ここを見ます。</h2>
@@ -132,7 +144,8 @@
   </div>
 </section>
 
-<section class="sec s-mint" id="tips" aria-labelledby="tips-title">
+<section class="sec bg-pale" id="tips" aria-labelledby="tips-title">
+  <svg class="wv flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap">
     <p class="kick">高く売るこつ</p>
     <h2 id="tips-title">少しの準備で、印象が変わります。</h2>
@@ -150,7 +163,8 @@
   </div>
 </section>
 
-<section class="sec" id="loan" aria-labelledby="loan-title">
+<section class="sec bg-white" id="loan" aria-labelledby="loan-title">
+  <svg class="wv" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap">
     <p class="kick">ローンが残っている車</p>
     <h2 id="loan-title">ローンが残っていても、売れます。</h2>
@@ -179,6 +193,7 @@
 </section>
 
 <section class="pr-band" id="promise" aria-labelledby="promise-title">
+  <svg class="wv flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap pr-band-in">
     <div class="pr-band-head">
       <h2 id="promise-title">売ったあとで困らないための、6つのお約束</h2>
@@ -196,16 +211,19 @@
 </section>
 
 <aside class="band" aria-label="お申込みのご案内">
+  <svg class="wv" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
+  <div class="band-clip" data-live aria-hidden="true"><div class="band-road"></div><div class="band-kei"><img src="assets/img/kei-side.webp" alt="" width="96" height="51" loading="lazy" decoding="async"></div></div>
   <div class="wrap band-in">
-    <p><b>金額を聞くだけでも、大丈夫です。</b>お名前と電話番号だけ、約1分で申し込めます。</p>
+    <p class="band-t"><b>金額を聞くだけでも、大丈夫です。</b>お名前と電話番号だけ、約1分で申し込めます。</p>
     <div class="band-acts">
       <a class="btn btn-go" href="index.html#apply" data-apply>無料で査定を申し込む</a>
-      <a class="band-tel" href="tel:0120979574" data-track="tel"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
+      <a class="btn btn-tel" href="tel:0120979574" data-track="tel"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
     </div>
   </div>
 </aside>
 
-<section class="faq sec" id="faq" aria-labelledby="faq-title">
+<section class="faq sec bg-white" id="faq" aria-labelledby="faq-title">
+  <svg class="wv flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap faq-grid">
     <div class="faq-head">
       <p class="kick">よくある質問</p>
@@ -214,15 +232,16 @@
       <p class="note"><a href="index.html#faq">書類やお振込みなど、ほかの質問を見る</a></p>
     </div>
     <div class="faq-list">
-      <details open><summary>10年・10万kmをこえた車でも、値段はつきますか。</summary><p>はい。手入れの具合や、部品・資源としての値打ちを見て値段をつけます。中古車として値段がつきにくい車は、<a href="haisha.html">廃車として買い取る</a>こともできます。</p></details>
-      <details><summary>改造している車も買い取ってもらえますか。</summary><p>はい。外した純正の部品が残っていれば、一緒にお出しください。改造の内容によって、評価が変わります。</p></details>
-      <details><summary>査定の日は、立ち会いが要りますか。</summary><p>車を見る30分ほどは、できればお立ち会いください。金額のご説明も、その場でいたします。</p></details>
-      <details><summary>次の車が届くまで、今の車に乗っていてもいいですか。</summary><p>はい。引き取りの日は、次の車が届く日に合わせて決められます。お伝えした金額は7日間そのままです。それより先の引き取りになるときは、日にちに合わせた金額を、ご相談のうえで決めます。</p></details>
+      <details open class="qa"><summary>10年・10万kmをこえた車でも、値段はつきますか。</summary><div class="a"><p>はい。手入れの具合や、部品・資源としての値打ちを見て値段をつけます。中古車として値段がつきにくい車は、<a href="haisha.html">廃車として買い取る</a>こともできます。</p></div></details>
+      <details class="qa"><summary>改造している車も買い取ってもらえますか。</summary><div class="a"><p>はい。外した純正の部品が残っていれば、一緒にお出しください。改造の内容によって、評価が変わります。</p></div></details>
+      <details class="qa"><summary>査定の日は、立ち会いが要りますか。</summary><div class="a"><p>車を見る30分ほどは、できればお立ち会いください。金額のご説明も、その場でいたします。</p></div></details>
+      <details class="qa"><summary>次の車が届くまで、今の車に乗っていてもいいですか。</summary><div class="a"><p>はい。引き取りの日は、次の車が届く日に合わせて決められます。お伝えした金額は7日間そのままです。それより先の引き取りになるときは、日にちに合わせた金額を、ご相談のうえで決めます。</p></div></details>
     </div>
   </div>
 </section>
 
-<section class="apply sec s-mint" id="apply" aria-labelledby="apply-title">
+<section class="apply sec bg-pale" id="apply" aria-labelledby="apply-title">
+  <svg class="wv" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap final-grid">
     <div class="final-copy">
       <p class="kick">無料査定のお申込み</p>
@@ -266,17 +285,18 @@
 </main>
 
 <footer class="foot">
+  <svg class="wv flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C160 4 320 2 480 14S800 38 960 30 1280 4 1440 16V40Z"/></svg>
   <div class="wrap foot-cta">
     <p class="foot-cta-t">車のご相談は、お気軽に</p>
-    <a class="foot-tel" href="tel:0120979574" data-track="tel" data-place="footer"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg><span class="tel-no">0120-979-574</span></a>
+    <a class="foot-tel" href="tel:0120979574" data-place="footer"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg>0120-979-574</a>
     <p class="foot-hours">通話無料・毎日8:00〜23:00</p>
     <a class="btn btn-go" href="index.html#apply" data-apply data-place="footer">無料で査定を申し込む</a>
   </div>
   <div class="wrap foot-in">
-    <span class="logo" aria-hidden="true"><i></i><i></i><span class="logo-t">ノリカエ<small>.com</small></span></span>
+    <p class="foot-logo"><img src="assets/icon.svg" alt="" width="40" height="40">ノリカエ.com</p>
     <p>神奈川県の出張車買取　運営：株式会社おてつだい.com<br>〒243-0806 神奈川県厚木市<span class="nw">下依知2-15-12</span><br>古物商許可 神奈川県公安委員会 第452740019822号</p>
-    <p class="foot-c">© 2026 ノリカエ.com（株式会社おてつだい.com）</p>
     <nav class="foot-nav" aria-label="ページの一覧"><a href="index.html">トップ</a><a href="usedcar.html" aria-current="page">中古車の買取</a><a href="haisha.html">廃車・古い車の買取</a><a href="truck.html">商用車・トラックの買取</a><a href="privacy.html">個人情報の取り扱い</a></nav>
+    <p class="foot-c">© 2026 ノリカエ.com（株式会社おてつだい.com）</p>
   </div>
 </footer>
 
