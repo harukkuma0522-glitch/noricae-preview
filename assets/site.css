@@ -445,7 +445,7 @@ input[aria-invalid="true"]{border-color:var(--roof-ink);box-shadow:0 0 0 3px col
 .ar p{font-size:.96rem;line-height:1.75}
 
 /* ---- よくある質問 ---- */
-.faq-grid{display:grid;gap:36px}
+.faq-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:36px}
 @media(min-width:980px){.faq-grid{grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}}
 .faq-list{display:flex;flex-direction:column;gap:14px}
 .qa{background:var(--paper);border:2.5px solid var(--ink);border-radius:18px;box-shadow:0 4px 0 var(--ink)}
